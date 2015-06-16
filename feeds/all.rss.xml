@@ -4,9 +4,24 @@
   <title>My Awesome Blog: My Awesome Blog</title>
   <description>My Awesome Blog: My Awesome Blog</description>
   <link>http://www.example.com/index.html</link>
-  <lastBuildDate>Sun, 01 Jan 2012 05:00:00 UT</lastBuildDate>
-  <pubDate>Sun, 01 Jan 2012 05:00:00 UT</pubDate>
+  <lastBuildDate>Tue, 16 Jun 2015 02:54:40 UT</lastBuildDate>
+  <pubDate>Tue, 16 Jun 2015 02:54:40 UT</pubDate>
   <ttl>1800</ttl>
+  <item>
+   <title>在github上使用frog博客引擎</title>
+   <link>http://www.example.com/blog/2015/06/15/在github上使用frog博客引擎/?utm_source=all&amp;utm_medium=RSS</link>
+   <guid>urn:http-www-example-com:-blog-2015-06-15-在github上使用frog博客引擎</guid>
+   <pubDate>Tue, 16 Jun 2015 02:54:40 UT</pubDate>
+   <description>&lt;html&gt;
+&lt;ol&gt;
+ &lt;li&gt;制作用于访问github的ssh密钥&lt;/li&gt;
+ &lt;li&gt;查看.ssh已有密钥 &lt;code&gt;bash
+$ ls -al ~/.ssh&lt;/code&gt;  若使用已有密钥，则忽略xxx。&lt;/li&gt;
+ &lt;li&gt;制作新ssh密钥 &lt;code&gt;bash
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+Enter file in which to save the key (/Users/you/.ssh/id_rsa): [press enter]
+Enter passphrase (empty for no passphrase): [type a passphrase]
+# Enter same passphrase again: [type passphrase again]&lt;/code&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/html&gt;</description></item>
   <item>
    <title>A 2012 blog post</title>
    <link>http://www.example.com/blog/2012/01/01/a-2012-blog-post/?utm_source=all&amp;utm_medium=RSS</link>

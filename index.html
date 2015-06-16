@@ -6,7 +6,7 @@
     <title>My Awesome Blog</title>
     <meta name="description" content="My Awesome Blog">
     <meta name="author"      content="The Unknown Author">
-    <meta name="keywords"    content="baz, tag with spaces, bar, foo, all">
+    <meta name="keywords"    content="racket, 教程, baz, foo, bar, frog, tag with spaces, 博客, all">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
     <link rel="canonical" href="http://www.example.com/index.html">
@@ -65,7 +65,15 @@
 
 <li><a href="/tags/foo.html">foo</a></li>
 
+<li><a href="/tags/frog.html">frog</a></li>
+
+<li><a href="/tags/racket.html">racket</a></li>
+
 <li><a href="/tags/tag-with-spaces.html">tag with spaces</a></li>
+
+<li><a href="/tags/博客.html">博客</a></li>
+
+<li><a href="/tags/教程.html">教程</a></li>
               </ul>
             </li>
             <li>
@@ -91,6 +99,23 @@
 
 
           <article>
+  <header>
+    <h2><a href='/blog/2015/06/15/在github上使用frog博客引擎/'>在github上使用frog博客引擎</a></h2>
+    <p class='date-and-tags'>
+<time datetime="2015-06-15" pubdate="true">2015-06-15</time> :: <span class="tags"><a href="/tags/教程.html">教程</a>, <a href="/tags/racket.html">racket</a>, <a href="/tags/frog.html">frog</a>, <a href="/tags/博客.html">博客</a></span></p>
+  </header>
+
+<ol>
+ <li>制作用于访问github的ssh密钥</li>
+ <li>查看.ssh已有密钥 <code>bash
+$ ls -al ~/.ssh</code>  若使用已有密钥，则忽略xxx。</li>
+ <li>制作新ssh密钥 <code>bash
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+Enter file in which to save the key (/Users/you/.ssh/id_rsa): [press enter]
+Enter passphrase (empty for no passphrase): [type a passphrase]
+# Enter same passphrase again: [type passphrase again]</code></li></ol>
+</article>
+<article>
   <header>
     <h2><a href='/blog/2012/01/01/a-2012-blog-post/'>A 2012 blog post</a></h2>
     <p class='date-and-tags'>
