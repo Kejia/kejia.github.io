@@ -8,11 +8,13 @@
   <pubDate>Tue, 16 Jun 2015 02:54:40 UT</pubDate>
   <ttl>1800</ttl>
   <item>
-   <title>在github上使用frog博客引擎</title>
-   <link>http://www.example.com/blog/2015/06/15/在github上使用frog博客引擎/?utm_source=all&amp;utm_medium=RSS</link>
-   <guid>urn:http-www-example-com:-blog-2015-06-15-在github上使用frog博客引擎</guid>
+   <title>在github.io上部署frog博客引擎</title>
+   <link>http://www.example.com/blog/2015/06/15/在github-io上部署frog博客引擎/?utm_source=all&amp;utm_medium=RSS</link>
+   <guid>urn:http-www-example-com:-blog-2015-06-15-在github-io上部署frog博客引擎</guid>
    <pubDate>Tue, 16 Jun 2015 02:54:40 UT</pubDate>
    <description>&lt;html&gt;
+&lt;p&gt;&lt;a href="http://github.com/greghendershott/frog"&gt;frog&lt;/a&gt;是基于&lt;a href="http://racket-lang.org/"&gt;racket&lt;/a&gt;的博客引擎，本文介绍了如何在&lt;a href="http://help.github.com/articles/user-organization-and-project-pages/"&gt;github.io&lt;/a&gt;上部署该博客引擎。&lt;/p&gt;
+
 &lt;ol&gt;
  &lt;li&gt;
   &lt;p&gt;制作用于访问github的ssh密钥&lt;/p&gt;
