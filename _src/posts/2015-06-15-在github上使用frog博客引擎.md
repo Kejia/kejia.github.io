@@ -2,107 +2,110 @@
     Date: 2015-06-15T22:54:40
     Tags: 教程, racket, frog, 博客
 
-1.  制作用于访问github的ssh密钥
+0. 制作用于访问github的ssh密钥
 
-refer to: https://help.github.com/articles/generating-ssh-keys/
+	参考：[配置github密钥](http://help.github.com/articles/generating-ssh-keys/)。
 
-1.1 查看.ssh已有密钥
+	0. 查看.ssh已有密钥
 
-```bash
-$ ls -al ~/.ssh
-```
-若使用已有密钥，则忽略xxx。
+		```bash
+		$ ls -al ~/.ssh
+		```
+		若使用已有密钥，则忽略下一步。
 
-    2. 制作新ssh密钥
+	0. 制作新ssh密钥
 
-            ```bash
-            $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-            Enter file in which to save the key (/Users/you/.ssh/id_rsa): [press enter]
-            Enter passphrase (empty for no passphrase): [type a passphrase]
-            # Enter same passphrase again: [type passphrase again]
-            ```
-3. check whether ssh-agent is running
+		```bash
+		$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+		Enter file in which to save the key (/Users/you/.ssh/id_rsa): [press enter]
+		Enter passphrase (empty for no passphrase): [type a passphrase]
+		# Enter same passphrase again: [type passphrase again]
+		```
 
-```bash
-$ eval "$(ssh-agent -s)"
-# Agent pid 59566
-```
+	0. 检测ssh-agent是否运行
 
-4. add my key to ssh-agent
+		```bash
+		$ eval "$(ssh-agent -s)"
+		# Agent pid 59566
+		```
 
-```bash
-$ ssh-add ~/.ssh/id_rsa
-```
+	0. 公钥交由ssh-agent
 
-5. copy pub key
+		```bash
+		$ ssh-add ~/.ssh/id_rsa
+		```
 
-```bash
-$ xclip -sel clip < ~/.ssh/id_rsa.pub
-```
+	0. 复制公钥到剪贴板
 
-6. copy the key to github
+		```bash
+		$ xclip -sel clip < ~/.ssh/id_rsa.pub
+		```
 
-settings > add ssh key
+	0. 公钥交由github
 
-7. test
+		settings > add ssh key
 
-```bash
-$ ssh -T git@github.com
-```
+	0. 测试
 
-# set up github user page
+		```bash
+		$ ssh -T git@github.com
+		```
 
-refer to: https://www.thinkful.com/learn/a-guide-to-using-github-pages/start/new-project/user-page/
+0. 设置github用户页
 
-1. create the user page repo
+	参考：[github主页指南](http://www.thinkful.com/learn/a-guide-to-using-github-pages/)。
 
-repo name must be: username.github.io
+    要使用username.github.io的域名，则需要创建github用户页作业，作业仓库名必须是：username.github.io。
 
-# create frog
+0. 创建frog作业
 
-refer to: https://github.com/greghendershott/frog
+    参考：[frog指南](http://github.com/greghendershott/frog)。
 
-1. clone github user page repo
+    0. 克隆github用户页作业
 
-```bash
-$ mkdir frog
-$ cd frog
-$ git clone https://github.com/username/username.github.io.git
-```
+		```bash
+		 $ mkdir frog
+		 $ cd frog
+		 $ git clone https://github.com/username/username.github.io.git
+		 ```
 
-2. install frog
+    0. 安装frog
 
-```bash
-$ raco pkg install frog
-$ raco pkg update --update-deps frog
-$ aptitude install python-pygments
-$ aptitude install python3-pygments
-```
+		```bash
+		$ raco pkg install frog
+		$ raco pkg update --update-deps frog
+		$ aptitude install python-pygments
+		$ aptitude install python3-pygments
+		```
 
-3. create the frog project
+	0. 建立作业
 
-```bash
-$ cd username.github.io
-$ raco frog --init
-```
+		```bash
+		$ cd username.github.io
+		$ raco frog --init
+		```
 
-4.  create a post
+0. 发布文章
 
-```bash
-$ raco frog -n "My Post Title"
-```
+    参考：[frog指南](http://github.com/greghendershott/frog)。
 
-5. preview
+	0. 创建文章
 
-```bash
-$ raco frog -bp
-```
+		```bash
+		$ raco frog -n "My Post Title"
+		```
 
-6. deploy to github
+	0. 编译并预览
 
-```bash
-$ raco frog -b
-$ git add .
-$ git commit -m 'post my blog'
-$ git push origin master
-```
+		```bash
+		$ raco frog -bp
+		```
+
+	0. 部署至github
+
+		```bash
+		$ raco frog -b
+		$ git add .
+		$ git commit -m 'post my blog'
+		$ git push origin master
+		```

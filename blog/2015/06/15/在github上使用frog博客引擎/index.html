@@ -4,7 +4,7 @@
 
     <meta charset="utf-8">
     <title>在github上使用frog博客引擎</title>
-    <meta name="description" content="制作用于访问github的ssh密钥  refer to: https://help.github.com/articles/generating-ssh-keys/  1.1 查看.ssh已有密钥                     1              $ ls -al ~/.ssh     若使用已有密钥，则忽略xxx。  `2. 制作新ssh密钥         ```bash         $ ssh-keygen -t rsa -b 4096 -C &quot;your_email@exa...">
+    <meta name="description" content="制作用于访问github的ssh密钥    参考：配置github密钥。             查看.ssh已有密钥      `$ ls -al ~/.ssh`     若使用已有密钥，则忽略下一步。       制作新ssh密钥      `$ ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; Enter file in which to save the key (/Users/you/.ssh/id_rsa): [press enter]...">
     <meta name="author"      content="The Unknown Author">
     <meta name="keywords"    content="教程, racket, frog, 博客">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
@@ -103,244 +103,76 @@
   </header>
 
 <ol>
- <li>制作用于访问github的ssh密钥</li></ol>
-
-<p>refer to: https://help.github.com/articles/generating-ssh-keys/</p>
-
-<p>1.1 查看.ssh已有密钥</p>
-
-<div class="brush: bash">
- <table class="sourcetable">
-  <tbody>
-   <tr>
-    <td class="linenos">
-     <div class="linenodiv">
-      <pre>1</pre></div></td>
-    <td class="code">
-     <div class="source">
-      <pre><span class="nv">$ </span>ls -al ~/.ssh
-</pre></div>
-</td></tr></tbody></table>
-</div>
-
-<p>若使用已有密钥，则忽略xxx。</p>
-
-<pre><code>2. 制作新ssh密钥
-
-        ```bash
-        $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-        Enter file in which to save the key (/Users/you/.ssh/id_rsa): [press enter]
-        Enter passphrase (empty for no passphrase): [type a passphrase]
-        # Enter same passphrase again: [type passphrase again]
-        ```</code></pre>
-
-<ol>
- <li>check whether ssh-agent is running</li></ol>
-
-<div class="brush: bash">
- <table class="sourcetable">
-  <tbody>
-   <tr>
-    <td class="linenos">
-     <div class="linenodiv">
-      <pre>1
-2</pre></div></td>
-    <td class="code">
-     <div class="source">
-      <pre><span class="nv">$ </span><span class="nb">eval</span> <span class="s2">"$(ssh-agent -s)"</span>
-<span class="c"># Agent pid 59566</span>
-</pre></div>
-</td></tr></tbody></table>
-</div>
-
-<ol>
- <li>add my key to ssh-agent</li></ol>
-
-<div class="brush: bash">
- <table class="sourcetable">
-  <tbody>
-   <tr>
-    <td class="linenos">
-     <div class="linenodiv">
-      <pre>1</pre></div></td>
-    <td class="code">
-     <div class="source">
-      <pre><span class="nv">$ </span>ssh-add ~/.ssh/id_rsa
-</pre></div>
-</td></tr></tbody></table>
-</div>
-
-<ol>
- <li>copy pub key</li></ol>
-
-<div class="brush: bash">
- <table class="sourcetable">
-  <tbody>
-   <tr>
-    <td class="linenos">
-     <div class="linenodiv">
-      <pre>1</pre></div></td>
-    <td class="code">
-     <div class="source">
-      <pre><span class="nv">$ </span>xclip -sel clip &lt; ~/.ssh/id_rsa.pub
-</pre></div>
-</td></tr></tbody></table>
-</div>
-
-<ol>
- <li>copy the key to github</li></ol>
-
-<p>settings &gt; add ssh key</p>
-
-<ol>
- <li>test</li></ol>
-
-<div class="brush: bash">
- <table class="sourcetable">
-  <tbody>
-   <tr>
-    <td class="linenos">
-     <div class="linenodiv">
-      <pre>1</pre></div></td>
-    <td class="code">
-     <div class="source">
-      <pre><span class="nv">$ </span>ssh -T git@github.com
-</pre></div>
-</td></tr></tbody></table>
-</div>
-
-<h1 id="set-up-github-user-page">set up github user page</h1>
-
-<p>refer to: https://www.thinkful.com/learn/a-guide-to-using-github-pages/start/new-project/user-page/</p>
-
-<ol>
- <li>create the user page repo</li></ol>
-
-<p>repo name must be: username.github.io</p>
-
-<h1 id="create-frog">create frog</h1>
-
-<p>refer to: https://github.com/greghendershott/frog</p>
-
-<ol>
- <li>clone github user page repo</li></ol>
-
-<div class="brush: bash">
- <table class="sourcetable">
-  <tbody>
-   <tr>
-    <td class="linenos">
-     <div class="linenodiv">
-      <pre>1
-2
-3</pre></div></td>
-    <td class="code">
-     <div class="source">
-      <pre><span class="nv">$ </span>mkdir frog
-<span class="nv">$ </span><span class="nb">cd </span>frog
-<span class="nv">$ </span>git clone https://github.com/username/username.github.io.git
-</pre></div>
-</td></tr></tbody></table>
-</div>
-
-<ol>
- <li>install frog</li></ol>
-
-<div class="brush: bash">
- <table class="sourcetable">
-  <tbody>
-   <tr>
-    <td class="linenos">
-     <div class="linenodiv">
-      <pre>1
-2
-3
-4</pre></div></td>
-    <td class="code">
-     <div class="source">
-      <pre><span class="nv">$ </span>raco pkg install frog
-<span class="nv">$ </span>raco pkg update --update-deps frog
-<span class="nv">$ </span>aptitude install python-pygments
-<span class="nv">$ </span>aptitude install python3-pygments
-</pre></div>
-</td></tr></tbody></table>
-</div>
-
-<ol>
- <li>create the frog project</li></ol>
-
-<div class="brush: bash">
- <table class="sourcetable">
-  <tbody>
-   <tr>
-    <td class="linenos">
-     <div class="linenodiv">
-      <pre>1
-2</pre></div></td>
-    <td class="code">
-     <div class="source">
-      <pre><span class="nv">$ </span><span class="nb">cd </span>username.github.io
-<span class="nv">$ </span>raco frog --init
-</pre></div>
-</td></tr></tbody></table>
-</div>
-
-<ol>
- <li>create a post</li></ol>
-
-<div class="brush: bash">
- <table class="sourcetable">
-  <tbody>
-   <tr>
-    <td class="linenos">
-     <div class="linenodiv">
-      <pre>1</pre></div></td>
-    <td class="code">
-     <div class="source">
-      <pre><span class="nv">$ </span>raco frog -n <span class="s2">"My Post Title"</span>
-</pre></div>
-</td></tr></tbody></table>
-</div>
-
-<ol>
- <li>preview</li></ol>
-
-<div class="brush: bash">
- <table class="sourcetable">
-  <tbody>
-   <tr>
-    <td class="linenos">
-     <div class="linenodiv">
-      <pre>1</pre></div></td>
-    <td class="code">
-     <div class="source">
-      <pre><span class="nv">$ </span>raco frog -bp
-</pre></div>
-</td></tr></tbody></table>
-</div>
-
-<ol>
- <li>deploy to github</li></ol>
-
-<div class="brush: bash">
- <table class="sourcetable">
-  <tbody>
-   <tr>
-    <td class="linenos">
-     <div class="linenodiv">
-      <pre>1
-2
-3
-4</pre></div></td>
-    <td class="code">
-     <div class="source">
-      <pre><span class="nv">$ </span>raco frog -b
-<span class="nv">$ </span>git add .
-<span class="nv">$ </span>git commit -m <span class="s1">&#39;post my blog&#39;</span>
-<span class="nv">$ </span>git push origin master
-</pre></div>
-</td></tr></tbody></table>
-</div>
+ <li>
+  <p>制作用于访问github的ssh密钥</p>
+  <p>参考：<a href="http://help.github.com/articles/generating-ssh-keys/">配置github密钥</a>。</p>
+  <ol>
+   <li>
+    <p>查看.ssh已有密钥</p>
+    <pre class="brush: bash"><code>$ ls -al ~/.ssh</code></pre>
+    <p>若使用已有密钥，则忽略下一步。</p></li>
+   <li>
+    <p>制作新ssh密钥</p>
+    <pre class="brush: bash"><code>$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+Enter file in which to save the key (/Users/you/.ssh/id_rsa): [press enter]
+Enter passphrase (empty for no passphrase): [type a passphrase]
+# Enter same passphrase again: [type passphrase again]</code></pre></li>
+   <li>
+    <p>检测ssh-agent是否运行</p>
+    <pre class="brush: bash"><code>$ eval "$(ssh-agent -s)"
+# Agent pid 59566</code></pre></li>
+   <li>
+    <p>公钥交由ssh-agent</p>
+    <pre class="brush: bash"><code>$ ssh-add ~/.ssh/id_rsa</code></pre></li>
+   <li>
+    <p>复制公钥到剪贴板</p>
+    <pre class="brush: bash"><code>$ xclip -sel clip &lt; ~/.ssh/id_rsa.pub</code></pre></li>
+   <li>
+    <p>公钥交由github</p>
+    <p>settings &gt; add ssh key</p></li>
+   <li>
+    <p>测试</p>
+    <pre class="brush: bash"><code>$ ssh -T git@github.com</code></pre></li></ol></li>
+ <li>
+  <p>设置github用户页</p>
+  <p>参考：<a href="http://www.thinkful.com/learn/a-guide-to-using-github-pages/">github主页指南</a>。</p>
+  <p>要使用username.github.io的域名，则需要创建github用户页作业，作业仓库名必须是：username.github.io。</p></li>
+ <li>
+  <p>创建frog作业</p>
+  <p>参考：<a href="http://github.com/greghendershott/frog">frog指南</a>。</p>
+  <ol>
+   <li>
+    <p>克隆github用户页作业</p>
+    <p><code>bash
+ $ mkdir frog
+ $ cd frog
+ $ git clone https://github.com/username/username.github.io.git</code></p></li>
+   <li>
+    <p>安装frog</p>
+    <pre class="brush: bash"><code>$ raco pkg install frog
+$ raco pkg update --update-deps frog
+$ aptitude install python-pygments
+$ aptitude install python3-pygments</code></pre></li>
+   <li>
+    <p>建立作业</p>
+    <pre class="brush: bash"><code>$ cd username.github.io
+$ raco frog --init</code></pre></li></ol></li>
+ <li>
+  <p>发布文章</p>
+  <p>参考：<a href="http://github.com/greghendershott/frog">frog指南</a>。</p>
+  <ol>
+   <li>
+    <p>创建文章</p>
+    <pre class="brush: bash"><code>$ raco frog -n "My Post Title"</code></pre></li>
+   <li>
+    <p>编译并预览</p>
+    <pre class="brush: bash"><code>$ raco frog -bp</code></pre></li>
+   <li>
+    <p>部署至github</p>
+    <pre class="brush: bash"><code>$ raco frog -b
+$ git add .
+$ git commit -m 'post my blog'
+$ git push origin master</code></pre></li></ol></li></ol>
   <footer>
     <script type="text/javascript">
       !function(d,s,id){

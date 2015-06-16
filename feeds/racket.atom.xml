@@ -15,241 +15,73 @@
    <name>The Unknown Author</name></author>
   <content type="html">&lt;html&gt;
 &lt;ol&gt;
- &lt;li&gt;制作用于访问github的ssh密钥&lt;/li&gt;&lt;/ol&gt;
-
-&lt;p&gt;refer to: https://help.github.com/articles/generating-ssh-keys/&lt;/p&gt;
-
-&lt;p&gt;1.1 查看.ssh已有密钥&lt;/p&gt;
-
-&lt;div class="brush: bash"&gt;
- &lt;table class="sourcetable"&gt;
-  &lt;tbody&gt;
-   &lt;tr&gt;
-    &lt;td class="linenos"&gt;
-     &lt;div class="linenodiv"&gt;
-      &lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
-    &lt;td class="code"&gt;
-     &lt;div class="source"&gt;
-      &lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ls -al ~/.ssh
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;若使用已有密钥，则忽略xxx。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;2. 制作新ssh密钥
-
-        ```bash
-        $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-        Enter file in which to save the key (/Users/you/.ssh/id_rsa): [press enter]
-        Enter passphrase (empty for no passphrase): [type a passphrase]
-        # Enter same passphrase again: [type passphrase again]
-        ```&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
- &lt;li&gt;check whether ssh-agent is running&lt;/li&gt;&lt;/ol&gt;
-
-&lt;div class="brush: bash"&gt;
- &lt;table class="sourcetable"&gt;
-  &lt;tbody&gt;
-   &lt;tr&gt;
-    &lt;td class="linenos"&gt;
-     &lt;div class="linenodiv"&gt;
-      &lt;pre&gt;1
-2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
-    &lt;td class="code"&gt;
-     &lt;div class="source"&gt;
-      &lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="s2"&gt;"$(ssh-agent -s)"&lt;/span&gt;
-&lt;span class="c"&gt;# Agent pid 59566&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
- &lt;li&gt;add my key to ssh-agent&lt;/li&gt;&lt;/ol&gt;
-
-&lt;div class="brush: bash"&gt;
- &lt;table class="sourcetable"&gt;
-  &lt;tbody&gt;
-   &lt;tr&gt;
-    &lt;td class="linenos"&gt;
-     &lt;div class="linenodiv"&gt;
-      &lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
-    &lt;td class="code"&gt;
-     &lt;div class="source"&gt;
-      &lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh-add ~/.ssh/id_rsa
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
- &lt;li&gt;copy pub key&lt;/li&gt;&lt;/ol&gt;
-
-&lt;div class="brush: bash"&gt;
- &lt;table class="sourcetable"&gt;
-  &lt;tbody&gt;
-   &lt;tr&gt;
-    &lt;td class="linenos"&gt;
-     &lt;div class="linenodiv"&gt;
-      &lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
-    &lt;td class="code"&gt;
-     &lt;div class="source"&gt;
-      &lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;xclip -sel clip &amp;lt; ~/.ssh/id_rsa.pub
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
- &lt;li&gt;copy the key to github&lt;/li&gt;&lt;/ol&gt;
-
-&lt;p&gt;settings &amp;gt; add ssh key&lt;/p&gt;
-
-&lt;ol&gt;
- &lt;li&gt;test&lt;/li&gt;&lt;/ol&gt;
-
-&lt;div class="brush: bash"&gt;
- &lt;table class="sourcetable"&gt;
-  &lt;tbody&gt;
-   &lt;tr&gt;
-    &lt;td class="linenos"&gt;
-     &lt;div class="linenodiv"&gt;
-      &lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
-    &lt;td class="code"&gt;
-     &lt;div class="source"&gt;
-      &lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh -T git@github.com
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;h1 id="set-up-github-user-page"&gt;set up github user page&lt;/h1&gt;
-
-&lt;p&gt;refer to: https://www.thinkful.com/learn/a-guide-to-using-github-pages/start/new-project/user-page/&lt;/p&gt;
-
-&lt;ol&gt;
- &lt;li&gt;create the user page repo&lt;/li&gt;&lt;/ol&gt;
-
-&lt;p&gt;repo name must be: username.github.io&lt;/p&gt;
-
-&lt;h1 id="create-frog"&gt;create frog&lt;/h1&gt;
-
-&lt;p&gt;refer to: https://github.com/greghendershott/frog&lt;/p&gt;
-
-&lt;ol&gt;
- &lt;li&gt;clone github user page repo&lt;/li&gt;&lt;/ol&gt;
-
-&lt;div class="brush: bash"&gt;
- &lt;table class="sourcetable"&gt;
-  &lt;tbody&gt;
-   &lt;tr&gt;
-    &lt;td class="linenos"&gt;
-     &lt;div class="linenodiv"&gt;
-      &lt;pre&gt;1
-2
-3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
-    &lt;td class="code"&gt;
-     &lt;div class="source"&gt;
-      &lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir frog
-&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;frog
-&lt;span class="nv"&gt;$ &lt;/span&gt;git clone https://github.com/username/username.github.io.git
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
- &lt;li&gt;install frog&lt;/li&gt;&lt;/ol&gt;
-
-&lt;div class="brush: bash"&gt;
- &lt;table class="sourcetable"&gt;
-  &lt;tbody&gt;
-   &lt;tr&gt;
-    &lt;td class="linenos"&gt;
-     &lt;div class="linenodiv"&gt;
-      &lt;pre&gt;1
-2
-3
-4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
-    &lt;td class="code"&gt;
-     &lt;div class="source"&gt;
-      &lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;raco pkg install frog
-&lt;span class="nv"&gt;$ &lt;/span&gt;raco pkg update --update-deps frog
-&lt;span class="nv"&gt;$ &lt;/span&gt;aptitude install python-pygments
-&lt;span class="nv"&gt;$ &lt;/span&gt;aptitude install python3-pygments
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
- &lt;li&gt;create the frog project&lt;/li&gt;&lt;/ol&gt;
-
-&lt;div class="brush: bash"&gt;
- &lt;table class="sourcetable"&gt;
-  &lt;tbody&gt;
-   &lt;tr&gt;
-    &lt;td class="linenos"&gt;
-     &lt;div class="linenodiv"&gt;
-      &lt;pre&gt;1
-2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
-    &lt;td class="code"&gt;
-     &lt;div class="source"&gt;
-      &lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;username.github.io
-&lt;span class="nv"&gt;$ &lt;/span&gt;raco frog --init
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
- &lt;li&gt;create a post&lt;/li&gt;&lt;/ol&gt;
-
-&lt;div class="brush: bash"&gt;
- &lt;table class="sourcetable"&gt;
-  &lt;tbody&gt;
-   &lt;tr&gt;
-    &lt;td class="linenos"&gt;
-     &lt;div class="linenodiv"&gt;
-      &lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
-    &lt;td class="code"&gt;
-     &lt;div class="source"&gt;
-      &lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;raco frog -n &lt;span class="s2"&gt;"My Post Title"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
- &lt;li&gt;preview&lt;/li&gt;&lt;/ol&gt;
-
-&lt;div class="brush: bash"&gt;
- &lt;table class="sourcetable"&gt;
-  &lt;tbody&gt;
-   &lt;tr&gt;
-    &lt;td class="linenos"&gt;
-     &lt;div class="linenodiv"&gt;
-      &lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
-    &lt;td class="code"&gt;
-     &lt;div class="source"&gt;
-      &lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;raco frog -bp
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
- &lt;li&gt;deploy to github&lt;/li&gt;&lt;/ol&gt;
-
-&lt;div class="brush: bash"&gt;
- &lt;table class="sourcetable"&gt;
-  &lt;tbody&gt;
-   &lt;tr&gt;
-    &lt;td class="linenos"&gt;
-     &lt;div class="linenodiv"&gt;
-      &lt;pre&gt;1
-2
-3
-4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
-    &lt;td class="code"&gt;
-     &lt;div class="source"&gt;
-      &lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;raco frog -b
-&lt;span class="nv"&gt;$ &lt;/span&gt;git add .
-&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -m &lt;span class="s1"&gt;&amp;#39;post my blog&amp;#39;&lt;/span&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;git push origin master
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/html&gt;</content></entry></feed>
+ &lt;li&gt;
+  &lt;p&gt;制作用于访问github的ssh密钥&lt;/p&gt;
+  &lt;p&gt;参考：&lt;a href="http://help.github.com/articles/generating-ssh-keys/"&gt;配置github密钥&lt;/a&gt;。&lt;/p&gt;
+  &lt;ol&gt;
+   &lt;li&gt;
+    &lt;p&gt;查看.ssh已有密钥&lt;/p&gt;
+    &lt;pre class="brush: bash"&gt;&lt;code&gt;$ ls -al ~/.ssh&lt;/code&gt;&lt;/pre&gt;
+    &lt;p&gt;若使用已有密钥，则忽略下一步。&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;制作新ssh密钥&lt;/p&gt;
+    &lt;pre class="brush: bash"&gt;&lt;code&gt;$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+Enter file in which to save the key (/Users/you/.ssh/id_rsa): [press enter]
+Enter passphrase (empty for no passphrase): [type a passphrase]
+# Enter same passphrase again: [type passphrase again]&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;检测ssh-agent是否运行&lt;/p&gt;
+    &lt;pre class="brush: bash"&gt;&lt;code&gt;$ eval "$(ssh-agent -s)"
+# Agent pid 59566&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;公钥交由ssh-agent&lt;/p&gt;
+    &lt;pre class="brush: bash"&gt;&lt;code&gt;$ ssh-add ~/.ssh/id_rsa&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;复制公钥到剪贴板&lt;/p&gt;
+    &lt;pre class="brush: bash"&gt;&lt;code&gt;$ xclip -sel clip &amp;lt; ~/.ssh/id_rsa.pub&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;公钥交由github&lt;/p&gt;
+    &lt;p&gt;settings &amp;gt; add ssh key&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;测试&lt;/p&gt;
+    &lt;pre class="brush: bash"&gt;&lt;code&gt;$ ssh -T git@github.com&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;设置github用户页&lt;/p&gt;
+  &lt;p&gt;参考：&lt;a href="http://www.thinkful.com/learn/a-guide-to-using-github-pages/"&gt;github主页指南&lt;/a&gt;。&lt;/p&gt;
+  &lt;p&gt;要使用username.github.io的域名，则需要创建github用户页作业，作业仓库名必须是：username.github.io。&lt;/p&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;创建frog作业&lt;/p&gt;
+  &lt;p&gt;参考：&lt;a href="http://github.com/greghendershott/frog"&gt;frog指南&lt;/a&gt;。&lt;/p&gt;
+  &lt;ol&gt;
+   &lt;li&gt;
+    &lt;p&gt;克隆github用户页作业&lt;/p&gt;
+    &lt;p&gt;&lt;code&gt;bash
+ $ mkdir frog
+ $ cd frog
+ $ git clone https://github.com/username/username.github.io.git&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;安装frog&lt;/p&gt;
+    &lt;pre class="brush: bash"&gt;&lt;code&gt;$ raco pkg install frog
+$ raco pkg update --update-deps frog
+$ aptitude install python-pygments
+$ aptitude install python3-pygments&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;建立作业&lt;/p&gt;
+    &lt;pre class="brush: bash"&gt;&lt;code&gt;$ cd username.github.io
+$ raco frog --init&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;发布文章&lt;/p&gt;
+  &lt;p&gt;参考：&lt;a href="http://github.com/greghendershott/frog"&gt;frog指南&lt;/a&gt;。&lt;/p&gt;
+  &lt;ol&gt;
+   &lt;li&gt;
+    &lt;p&gt;创建文章&lt;/p&gt;
+    &lt;pre class="brush: bash"&gt;&lt;code&gt;$ raco frog -n "My Post Title"&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;编译并预览&lt;/p&gt;
+    &lt;pre class="brush: bash"&gt;&lt;code&gt;$ raco frog -bp&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;部署至github&lt;/p&gt;
+    &lt;pre class="brush: bash"&gt;&lt;code&gt;$ raco frog -b
+$ git add .
+$ git commit -m 'post my blog'
+$ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/html&gt;</content></entry></feed>
