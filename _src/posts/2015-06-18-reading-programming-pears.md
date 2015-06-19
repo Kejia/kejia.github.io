@@ -1,8 +1,8 @@
-    Title: reading programming pears
-    Date: 2015-06-18T20:51:52
-    Tags: programming pears
+    Title: reading programming pearls
+    Date: 2015-06-18T20:32:32
+    Tags: programming pearls
 
-_this is my note on reading  __programming pears__._
+_this is my note on reading  __programming pearls__._
 
 <!-- more -->
 
