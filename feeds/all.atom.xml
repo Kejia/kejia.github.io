@@ -4,7 +4,26 @@
  <link rel="self" href="http://kejia.github.io/feeds/all.atom.xml" />
  <link href="http://kejia.github.io/index.html" />
  <id>urn:http-kejia-github-io:-index-html</id>
- <updated>2015-06-19T02:33:36Z</updated>
+ <updated>2015-06-19T14:20:23Z</updated>
+ <entry>
+  <title type="text">take-while of clojure</title>
+  <link rel="alternate" href="http://kejia.github.io/blog/2015/06/19/take-while-of-clojure/?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:http-kejia-github-io:-blog-2015-06-19-take-while-of-clojure</id>
+  <published>2015-06-19T14:20:23Z</published>
+  <updated>2015-06-19T14:20:23Z</updated>
+  <author>
+   <name>柯嘉 | kejia</name></author>
+  <content type="html">&lt;html&gt;
+&lt;p&gt;in clojure, &lt;code&gt;take-while' is similar to&lt;/code&gt;filter&amp;rsquo;, but they are different.&lt;/p&gt;
+&lt;!-- more--&gt;
+
+&lt;div class="brush: clojure"&gt;
+ &lt;pre&gt;&lt;code&gt;&amp;gt; (filter pos? [8 0 -1 2 -3])
+(8 2)
+&amp;gt; (take-while pos? [8 0 -1 2 -3])
+(8)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;`take-while&amp;rsquo; stops traversing the list when the predicate is false.&lt;/p&gt;&lt;/html&gt;</content></entry>
  <entry>
   <title type="text">醪糟蛋花汤</title>
   <link rel="alternate" href="http://kejia.github.io/blog/2015/06/18/醪糟蛋花汤/?utm_source=all&amp;utm_medium=Atom" />

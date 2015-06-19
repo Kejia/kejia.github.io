@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">一位算士的博客 | a computor's blog: Posts tagged 'clojure'</title>
+ <link rel="self" href="http://kejia.github.io/feeds/clojure.atom.xml" />
+ <link href="http://kejia.github.io/tags/clojure.html" />
+ <id>urn:http-kejia-github-io:-tags-clojure-html</id>
+ <updated>2015-06-19T14:20:23Z</updated>
+ <entry>
+  <title type="text">take-while of clojure</title>
+  <link rel="alternate" href="http://kejia.github.io/blog/2015/06/19/take-while-of-clojure/?utm_source=clojure&amp;utm_medium=Atom" />
+  <id>urn:http-kejia-github-io:-blog-2015-06-19-take-while-of-clojure</id>
+  <published>2015-06-19T14:20:23Z</published>
+  <updated>2015-06-19T14:20:23Z</updated>
+  <author>
+   <name>柯嘉 | kejia</name></author>
+  <content type="html">&lt;html&gt;
+&lt;p&gt;in clojure, &lt;code&gt;take-while' is similar to&lt;/code&gt;filter&amp;rsquo;, but they are different.&lt;/p&gt;
+&lt;!-- more--&gt;
+
+&lt;div class="brush: clojure"&gt;
+ &lt;pre&gt;&lt;code&gt;&amp;gt; (filter pos? [8 0 -1 2 -3])
+(8 2)
+&amp;gt; (take-while pos? [8 0 -1 2 -3])
+(8)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;`take-while&amp;rsquo; stops traversing the list when the predicate is false.&lt;/p&gt;&lt;/html&gt;</content></entry></feed>
