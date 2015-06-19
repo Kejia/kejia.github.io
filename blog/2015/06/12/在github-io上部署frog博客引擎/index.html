@@ -3,15 +3,15 @@
   <head>
 
     <meta charset="utf-8">
-    <title>Posts tagged '博客'</title>
-    <meta name="description" content="Posts tagged '博客'">
+    <title>在github.io上部署frog博客引擎</title>
+    <meta name="description" content="_本文是关于如何在github上部署frog博客引擎的教程。_...">
     <meta name="author"      content="柯嘉 | kejia">
-    <meta name="keywords"    content="博客">
+    <meta name="keywords"    content="教程, racket, frog, 博客">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
-    <link rel="canonical" href="http://kejia.github.io/tags/博客.html">
+    <link rel="canonical" href="http://kejia.github.io/blog/2015/06/12/在github-io上部署frog博客引擎/">
 
-
+    <link rel="prev" href="/blog/2015/06/18/reading-programming-pears/">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/pygments.css">
@@ -19,9 +19,9 @@
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <!-- Feeds -->
     <link ref="alternate" type="application/atom+xml"
-          href="/feeds/博客.atom.xml" title="Atom Feed">
+          href="/feeds/all.atom.xml" title="Atom Feed">
     <link ref="alternate" type="application/rss+xml"
-          href="/feeds/博客.rss.xml" title="RSS Feed">
+          href="/feeds/all.rss.xml" title="RSS Feed">
     <!-- JS -->
     <script type="text/javascript">
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -75,8 +75,8 @@
             <li>
               <a href="/About.html">关于 | about</a>
             </li> 
-            <li><a href="/feeds/博客.atom.xml">atom</a></li>
-            <li><a href="/feeds/博客.rss.xml">rss</a></li>
+            <li><a href="/feeds/all.atom.xml">atom</a></li>
+            <li><a href="/feeds/all.rss.xml">rss</a></li>
           </ul>
         </div>
       </div>
@@ -89,17 +89,128 @@
 
 
 
-          <h1>Posts tagged <em>博客</em></h1>
+
 
           <article>
   <header>
-    <h2><a href='/blog/2015/06/12/在github-io上部署frog博客引擎/'>在github.io上部署frog博客引擎</a></h2>
+    <h1>在github.io上部署frog博客引擎</h1>
     <p class='date-and-tags'>
 <time datetime="2015-06-12" pubdate="true">2015-06-12</time> :: <span class="tags"><a href="/tags/教程.html">教程</a>, <a href="/tags/racket.html">racket</a>, <a href="/tags/frog.html">frog</a>, <a href="/tags/博客.html">博客</a></span></p>
   </header>
 
 <p><em>本文是关于如何在github上部署frog博客引擎的教程。</em></p>
-<footer class="read-more"><a href="/blog/2015/06/12/在github-io上部署frog博客引擎/">&hellip;more&hellip;</a></footer>
+<!-- more-->
+
+<p><a href="http://github.com/greghendershott/frog">frog</a>是基于<a href="http://racket-lang.org/">racket</a>的博客引擎，本文介绍了如何在<a href="http://help.github.com/articles/user-organization-and-project-pages/">github.io</a>上部署该博客引擎。</p>
+
+<ol>
+ <li>
+  <p>制作用于访问github的ssh密钥</p>
+  <p>参考：<a href="http://help.github.com/articles/generating-ssh-keys/">配置github密钥</a>。</p>
+  <ol>
+   <li>
+    <p>查看.ssh已有密钥</p>
+    <pre class="brush: bash"><code>$ ls -al ~/.ssh</code></pre>
+    <p>若使用已有密钥，则忽略下一步。</p></li>
+   <li>
+    <p>制作新ssh密钥</p>
+    <pre class="brush: bash"><code>$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+Enter file in which to save the key (/Users/you/.ssh/id_rsa): [press enter]
+Enter passphrase (empty for no passphrase): [type a passphrase]
+# Enter same passphrase again: [type passphrase again]</code></pre></li>
+   <li>
+    <p>检测ssh-agent是否运行</p>
+    <pre class="brush: bash"><code>$ eval "$(ssh-agent -s)"
+# Agent pid 59566</code></pre></li>
+   <li>
+    <p>公钥交由ssh-agent</p>
+    <pre class="brush: bash"><code>$ ssh-add ~/.ssh/id_rsa</code></pre></li>
+   <li>
+    <p>复制公钥到剪贴板</p>
+    <pre class="brush: bash"><code>$ xclip -sel clip &lt; ~/.ssh/id_rsa.pub</code></pre></li>
+   <li>
+    <p>公钥交由github</p>
+    <p>settings &gt; add ssh key</p></li>
+   <li>
+    <p>测试</p>
+    <pre class="brush: bash"><code>$ ssh -T git@github.com</code></pre></li></ol></li>
+ <li>
+  <p>设置github用户页</p>
+  <p>参考：<a href="http://www.thinkful.com/learn/a-guide-to-using-github-pages/">github主页指南</a>。</p>
+  <p>要使用username.github.io的域名，则需要创建github用户页作业，作业仓库名必须是：username.github.io。</p></li>
+ <li>
+  <p>创建frog作业</p>
+  <p>参考：<a href="http://github.com/greghendershott/frog">frog指南</a>。</p>
+  <ol>
+   <li>
+    <p>克隆github用户页作业</p>
+    <p><code>bash
+ $ mkdir frog
+ $ cd frog
+ $ git clone https://github.com/username/username.github.io.git</code></p></li>
+   <li>
+    <p>安装frog</p>
+    <pre class="brush: bash"><code>$ raco pkg install frog
+$ raco pkg update --update-deps frog
+$ aptitude install python-pygments
+$ aptitude install python3-pygments</code></pre></li>
+   <li>
+    <p>建立作业</p>
+    <pre class="brush: bash"><code>$ cd username.github.io
+$ raco frog --init</code></pre></li></ol></li>
+ <li>
+  <p>发布文章</p>
+  <p>参考：<a href="http://github.com/greghendershott/frog">frog指南</a>。</p>
+  <ol>
+   <li>
+    <p>创建文章</p>
+    <pre class="brush: bash"><code>$ raco frog -n "My Post Title"</code></pre></li>
+   <li>
+    <p>编译并预览</p>
+    <pre class="brush: bash"><code>$ raco frog -bp</code></pre></li>
+   <li>
+    <p>部署至github</p>
+    <pre class="brush: bash"><code>$ raco frog -b
+$ git add .
+$ git commit -m 'post my blog'
+$ git push origin master</code></pre></li></ol></li></ol>
+  <footer>
+    <script type="text/javascript">
+      !function(d,s,id){
+          var js,fjs=d.getElementsByTagName(s)[0];
+          if(!d.getElementById(id)){
+              js=d.createElement(s);
+              js.id=id;
+              js.src="//platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js,fjs);
+          }
+      }(document,"script","twitter-wjs");
+    </script>
+    <a href="https://twitter.com/share"
+       class="twitter-share-button"
+       data-url="http://kejia.github.io/blog/2015/06/12/在github-io上部署frog博客引擎/"
+       data-dnt="true">
+      "Tweet"</a>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <g:plusone size="medium" href="http://kejia.github.io/blog/2015/06/12/在github-io上部署frog博客引擎/"></g:plusone>
+    <script type="text/javascript">
+      var disqus_shortname = 'shortname';
+      (function() {
+          var dsq = document.createElement('script');
+          dsq.type = 'text/javascript';
+          dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <div id="disqus_thread"></div>
+    <ul class="pager">
+    <li class="previous">
+      <a href="/blog/2015/06/18/reading-programming-pears/">&larr; <em>reading programming pears</em></a>
+    </li>
+
+    </ul>
+  </footer>
 </article>
         </div>
       </div>

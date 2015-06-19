@@ -61,11 +61,15 @@
 
 <li><a href="/tags/frog.html">frog</a></li>
 
+<li><a href="/tags/programming-pears.html">programming pears</a></li>
+
 <li><a href="/tags/racket.html">racket</a></li>
 
 <li><a href="/tags/博客.html">博客</a></li>
 
 <li><a href="/tags/教程.html">教程</a></li>
+
+<li><a href="/tags/食谱.html">食谱</a></li>
               </ul>
             </li>
             <li>
@@ -89,84 +93,13 @@
 
           <article>
   <header>
-    <h2><a href='/blog/2015/06/15/在github-io上部署frog博客引擎/'>在github.io上部署frog博客引擎</a></h2>
+    <h2><a href='/blog/2015/06/12/在github-io上部署frog博客引擎/'>在github.io上部署frog博客引擎</a></h2>
     <p class='date-and-tags'>
-<time datetime="2015-06-15" pubdate="true">2015-06-15</time> :: <span class="tags"><a href="/tags/教程.html">教程</a>, <a href="/tags/racket.html">racket</a>, <a href="/tags/frog.html">frog</a>, <a href="/tags/博客.html">博客</a></span></p>
+<time datetime="2015-06-12" pubdate="true">2015-06-12</time> :: <span class="tags"><a href="/tags/教程.html">教程</a>, <a href="/tags/racket.html">racket</a>, <a href="/tags/frog.html">frog</a>, <a href="/tags/博客.html">博客</a></span></p>
   </header>
 
-<p><a href="http://github.com/greghendershott/frog">frog</a>是基于<a href="http://racket-lang.org/">racket</a>的博客引擎，本文介绍了如何在<a href="http://help.github.com/articles/user-organization-and-project-pages/">github.io</a>上部署该博客引擎。</p>
-
-<ol>
- <li>
-  <p>制作用于访问github的ssh密钥</p>
-  <p>参考：<a href="http://help.github.com/articles/generating-ssh-keys/">配置github密钥</a>。</p>
-  <ol>
-   <li>
-    <p>查看.ssh已有密钥</p>
-    <pre class="brush: bash"><code>$ ls -al ~/.ssh</code></pre>
-    <p>若使用已有密钥，则忽略下一步。</p></li>
-   <li>
-    <p>制作新ssh密钥</p>
-    <pre class="brush: bash"><code>$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-Enter file in which to save the key (/Users/you/.ssh/id_rsa): [press enter]
-Enter passphrase (empty for no passphrase): [type a passphrase]
-# Enter same passphrase again: [type passphrase again]</code></pre></li>
-   <li>
-    <p>检测ssh-agent是否运行</p>
-    <pre class="brush: bash"><code>$ eval "$(ssh-agent -s)"
-# Agent pid 59566</code></pre></li>
-   <li>
-    <p>公钥交由ssh-agent</p>
-    <pre class="brush: bash"><code>$ ssh-add ~/.ssh/id_rsa</code></pre></li>
-   <li>
-    <p>复制公钥到剪贴板</p>
-    <pre class="brush: bash"><code>$ xclip -sel clip &lt; ~/.ssh/id_rsa.pub</code></pre></li>
-   <li>
-    <p>公钥交由github</p>
-    <p>settings &gt; add ssh key</p></li>
-   <li>
-    <p>测试</p>
-    <pre class="brush: bash"><code>$ ssh -T git@github.com</code></pre></li></ol></li>
- <li>
-  <p>设置github用户页</p>
-  <p>参考：<a href="http://www.thinkful.com/learn/a-guide-to-using-github-pages/">github主页指南</a>。</p>
-  <p>要使用username.github.io的域名，则需要创建github用户页作业，作业仓库名必须是：username.github.io。</p></li>
- <li>
-  <p>创建frog作业</p>
-  <p>参考：<a href="http://github.com/greghendershott/frog">frog指南</a>。</p>
-  <ol>
-   <li>
-    <p>克隆github用户页作业</p>
-    <p><code>bash
- $ mkdir frog
- $ cd frog
- $ git clone https://github.com/username/username.github.io.git</code></p></li>
-   <li>
-    <p>安装frog</p>
-    <pre class="brush: bash"><code>$ raco pkg install frog
-$ raco pkg update --update-deps frog
-$ aptitude install python-pygments
-$ aptitude install python3-pygments</code></pre></li>
-   <li>
-    <p>建立作业</p>
-    <pre class="brush: bash"><code>$ cd username.github.io
-$ raco frog --init</code></pre></li></ol></li>
- <li>
-  <p>发布文章</p>
-  <p>参考：<a href="http://github.com/greghendershott/frog">frog指南</a>。</p>
-  <ol>
-   <li>
-    <p>创建文章</p>
-    <pre class="brush: bash"><code>$ raco frog -n "My Post Title"</code></pre></li>
-   <li>
-    <p>编译并预览</p>
-    <pre class="brush: bash"><code>$ raco frog -bp</code></pre></li>
-   <li>
-    <p>部署至github</p>
-    <pre class="brush: bash"><code>$ raco frog -b
-$ git add .
-$ git commit -m 'post my blog'
-$ git push origin master</code></pre></li></ol></li></ol>
+<p><em>本文是关于如何在github上部署frog博客引擎的教程。</em></p>
+<footer class="read-more"><a href="/blog/2015/06/12/在github-io上部署frog博客引擎/">&hellip;more&hellip;</a></footer>
 </article>
         </div>
       </div>

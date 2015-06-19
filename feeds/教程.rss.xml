@@ -4,15 +4,18 @@
   <title>一位算士的博客 | a computor's blog: Posts tagged '教程'</title>
   <description>一位算士的博客 | a computor's blog: Posts tagged '教程'</description>
   <link>http://kejia.github.io/tags/教程.html</link>
-  <lastBuildDate>Tue, 16 Jun 2015 02:54:40 UT</lastBuildDate>
-  <pubDate>Tue, 16 Jun 2015 02:54:40 UT</pubDate>
+  <lastBuildDate>Fri, 12 Jun 2015 20:32:08 UT</lastBuildDate>
+  <pubDate>Fri, 12 Jun 2015 20:32:08 UT</pubDate>
   <ttl>1800</ttl>
   <item>
    <title>在github.io上部署frog博客引擎</title>
-   <link>http://kejia.github.io/blog/2015/06/15/在github-io上部署frog博客引擎/?utm_source=教程&amp;utm_medium=RSS</link>
-   <guid>urn:http-kejia-github-io:-blog-2015-06-15-在github-io上部署frog博客引擎</guid>
-   <pubDate>Tue, 16 Jun 2015 02:54:40 UT</pubDate>
+   <link>http://kejia.github.io/blog/2015/06/12/在github-io上部署frog博客引擎/?utm_source=教程&amp;utm_medium=RSS</link>
+   <guid>urn:http-kejia-github-io:-blog-2015-06-12-在github-io上部署frog博客引擎</guid>
+   <pubDate>Fri, 12 Jun 2015 20:32:08 UT</pubDate>
    <description>&lt;html&gt;
+&lt;p&gt;&lt;em&gt;本文是关于如何在github上部署frog博客引擎的教程。&lt;/em&gt;&lt;/p&gt;
+&lt;!-- more--&gt;
+
 &lt;p&gt;&lt;a href="http://github.com/greghendershott/frog"&gt;frog&lt;/a&gt;是基于&lt;a href="http://racket-lang.org/"&gt;racket&lt;/a&gt;的博客引擎，本文介绍了如何在&lt;a href="http://help.github.com/articles/user-organization-and-project-pages/"&gt;github.io&lt;/a&gt;上部署该博客引擎。&lt;/p&gt;
 
 &lt;ol&gt;

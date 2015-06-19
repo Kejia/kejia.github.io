@@ -1,6 +1,10 @@
     Title: 在github.io上部署frog博客引擎
-    Date: 2015-06-15T22:54:40
+    Date: 2015-06-12T16:32:08
     Tags: 教程, racket, frog, 博客
+
+_本文是关于如何在github上部署frog博客引擎的教程。_
+
+<!-- more -->
 
 [frog](http://github.com/greghendershott/frog)是基于[racket](http://racket-lang.org/)的博客引擎，本文介绍了如何在[github.io](http://help.github.com/articles/user-organization-and-project-pages/)上部署该博客引擎。
 

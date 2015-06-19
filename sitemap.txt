@@ -1,2 +1,4 @@
-http://kejia.github.io/blog/2015/06/15/在github-io上部署frog博客引擎/
+http://kejia.github.io/blog/2015/06/12/在github-io上部署frog博客引擎/
+http://kejia.github.io/blog/2015/06/18/醪糟蛋花汤/
+http://kejia.github.io/blog/2015/06/18/reading-programming-pears/
 http://kejia.github.io/About.html
