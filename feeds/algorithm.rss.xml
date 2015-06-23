@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>一位算士的博客 | a computor's blog: Posts tagged 'algorithm'</title>
+  <description>一位算士的博客 | a computor's blog: Posts tagged 'algorithm'</description>
+  <link>http://kejia.github.io/tags/algorithm.html</link>
+  <lastBuildDate>Sun, 23 Jun 2002 22:10:55 UT</lastBuildDate>
+  <pubDate>Sun, 23 Jun 2002 22:10:55 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>sorting a binary search tree</title>
+   <link>http://kejia.github.io/blog/2002/06/23/sorting-a-binary-search-tree/?utm_source=algorithm&amp;utm_medium=RSS</link>
+   <guid>urn:http-kejia-github-io:-blog-2002-06-23-sorting-a-binary-search-tree</guid>
+   <pubDate>Sun, 23 Jun 2002 22:10:55 UT</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;in-order traversal can be used to sort a binary search tree.&lt;/p&gt;&lt;/html&gt;</description></item></channel></rss>

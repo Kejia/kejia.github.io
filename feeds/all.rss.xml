@@ -198,4 +198,11 @@ $ raco frog --init&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;
     &lt;pre class="brush: bash"&gt;&lt;code&gt;$ raco frog -b
 $ git add .
 $ git commit -m 'post my blog'
-$ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/html&gt;</description></item></channel></rss>
+$ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/html&gt;</description></item>
+  <item>
+   <title>sorting a binary search tree</title>
+   <link>http://kejia.github.io/blog/2002/06/23/sorting-a-binary-search-tree/?utm_source=all&amp;utm_medium=RSS</link>
+   <guid>urn:http-kejia-github-io:-blog-2002-06-23-sorting-a-binary-search-tree</guid>
+   <pubDate>Sun, 23 Jun 2002 22:10:55 UT</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;in-order traversal can be used to sort a binary search tree.&lt;/p&gt;&lt;/html&gt;</description></item></channel></rss>

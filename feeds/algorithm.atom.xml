@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">一位算士的博客 | a computor's blog: Posts tagged 'algorithm'</title>
+ <link rel="self" href="http://kejia.github.io/feeds/algorithm.atom.xml" />
+ <link href="http://kejia.github.io/tags/algorithm.html" />
+ <id>urn:http-kejia-github-io:-tags-algorithm-html</id>
+ <updated>2002-06-23T22:10:55Z</updated>
+ <entry>
+  <title type="text">sorting a binary search tree</title>
+  <link rel="alternate" href="http://kejia.github.io/blog/2002/06/23/sorting-a-binary-search-tree/?utm_source=algorithm&amp;utm_medium=Atom" />
+  <id>urn:http-kejia-github-io:-blog-2002-06-23-sorting-a-binary-search-tree</id>
+  <published>2002-06-23T22:10:55Z</published>
+  <updated>2002-06-23T22:10:55Z</updated>
+  <author>
+   <name>柯嘉 | kejia</name></author>
+  <content type="html">&lt;html&gt;
+&lt;p&gt;in-order traversal can be used to sort a binary search tree.&lt;/p&gt;&lt;/html&gt;</content></entry></feed>
