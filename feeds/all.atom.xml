@@ -218,4 +218,27 @@ $ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&g
   <author>
    <name>柯嘉 | kejia</name></author>
   <content type="html">&lt;html&gt;
-&lt;p&gt;in-order traversal can be used to sort a binary search tree.&lt;/p&gt;&lt;/html&gt;</content></entry></feed>
+&lt;p&gt;in-order traversal can be used to sort a binary search tree.&lt;/p&gt;&lt;/html&gt;</content></entry>
+ <entry>
+  <title type="text">java逻辑运算赋值快捷方式</title>
+  <link rel="alternate" href="http://kejia.github.io/blog/2001/02/08/java逻辑运算赋值快捷方式/?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:http-kejia-github-io:-blog-2001-02-08-java逻辑运算赋值快捷方式</id>
+  <published>2001-02-08T07:08:32Z</published>
+  <updated>2001-02-08T07:08:32Z</updated>
+  <author>
+   <name>柯嘉 | kejia</name></author>
+  <content type="html">&lt;html&gt;
+&lt;p&gt;&lt;em&gt;java中不存在&lt;code&gt;&amp;amp;&amp;amp;=&lt;/code&gt;，取而代之的是&lt;code&gt;&amp;amp;=&lt;/code&gt;。&lt;/em&gt;&lt;/p&gt;
+&lt;!-- more--&gt;
+
+&lt;div class="brush: java"&gt;
+ &lt;pre&gt;&lt;code&gt;boolean f = true, b = true;
+  ⋮
+f = f &amp;amp;&amp;amp; b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;等价于：&lt;/p&gt;
+
+&lt;div class="brush: java"&gt;
+ &lt;pre&gt;&lt;code&gt;boolean f = true, b = true;
+  ⋮
+f &amp;amp;= b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/html&gt;</content></entry></feed>

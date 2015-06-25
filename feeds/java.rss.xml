@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>一位算士的博客 | a computor's blog: Posts tagged 'java'</title>
+  <description>一位算士的博客 | a computor's blog: Posts tagged 'java'</description>
+  <link>http://kejia.github.io/tags/java.html</link>
+  <lastBuildDate>Thu, 08 Feb 2001 07:08:32 UT</lastBuildDate>
+  <pubDate>Thu, 08 Feb 2001 07:08:32 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>java逻辑运算赋值快捷方式</title>
+   <link>http://kejia.github.io/blog/2001/02/08/java逻辑运算赋值快捷方式/?utm_source=java&amp;utm_medium=RSS</link>
+   <guid>urn:http-kejia-github-io:-blog-2001-02-08-java逻辑运算赋值快捷方式</guid>
+   <pubDate>Thu, 08 Feb 2001 07:08:32 UT</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;&lt;em&gt;java中不存在&lt;code&gt;&amp;amp;&amp;amp;=&lt;/code&gt;，取而代之的是&lt;code&gt;&amp;amp;=&lt;/code&gt;。&lt;/em&gt;&lt;/p&gt;
+&lt;!-- more--&gt;
+
+&lt;div class="brush: java"&gt;
+ &lt;pre&gt;&lt;code&gt;boolean f = true, b = true;
+  ⋮
+f = f &amp;amp;&amp;amp; b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;等价于：&lt;/p&gt;
+
+&lt;div class="brush: java"&gt;
+ &lt;pre&gt;&lt;code&gt;boolean f = true, b = true;
+  ⋮
+f &amp;amp;= b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/html&gt;</description></item></channel></rss>

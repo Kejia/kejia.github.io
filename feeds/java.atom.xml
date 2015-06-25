@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">一位算士的博客 | a computor's blog: Posts tagged 'java'</title>
+ <link rel="self" href="http://kejia.github.io/feeds/java.atom.xml" />
+ <link href="http://kejia.github.io/tags/java.html" />
+ <id>urn:http-kejia-github-io:-tags-java-html</id>
+ <updated>2001-02-08T07:08:32Z</updated>
+ <entry>
+  <title type="text">java逻辑运算赋值快捷方式</title>
+  <link rel="alternate" href="http://kejia.github.io/blog/2001/02/08/java逻辑运算赋值快捷方式/?utm_source=java&amp;utm_medium=Atom" />
+  <id>urn:http-kejia-github-io:-blog-2001-02-08-java逻辑运算赋值快捷方式</id>
+  <published>2001-02-08T07:08:32Z</published>
+  <updated>2001-02-08T07:08:32Z</updated>
+  <author>
+   <name>柯嘉 | kejia</name></author>
+  <content type="html">&lt;html&gt;
+&lt;p&gt;&lt;em&gt;java中不存在&lt;code&gt;&amp;amp;&amp;amp;=&lt;/code&gt;，取而代之的是&lt;code&gt;&amp;amp;=&lt;/code&gt;。&lt;/em&gt;&lt;/p&gt;
+&lt;!-- more--&gt;
+
+&lt;div class="brush: java"&gt;
+ &lt;pre&gt;&lt;code&gt;boolean f = true, b = true;
+  ⋮
+f = f &amp;amp;&amp;amp; b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;等价于：&lt;/p&gt;
+
+&lt;div class="brush: java"&gt;
+ &lt;pre&gt;&lt;code&gt;boolean f = true, b = true;
+  ⋮
+f &amp;amp;= b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/html&gt;</content></entry></feed>
