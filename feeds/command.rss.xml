@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>一位算士的博客 | a computor's blog: Posts tagged 'command'</title>
+  <description>一位算士的博客 | a computor's blog: Posts tagged 'command'</description>
+  <link>http://kejia.github.io/tags/command.html</link>
+  <lastBuildDate>Tue, 26 Mar 2002 21:51:15 UT</lastBuildDate>
+  <pubDate>Tue, 26 Mar 2002 21:51:15 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>tar a file without ancestor directories</title>
+   <link>http://kejia.github.io/blog/2002/03/26/tar-a-file-without-ancestor-directories/?utm_source=command&amp;utm_medium=RSS</link>
+   <guid>urn:http-kejia-github-io:-blog-2002-03-26-tar-a-file-without-ancestor-directories</guid>
+   <pubDate>Tue, 26 Mar 2002 21:51:15 UT</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;&lt;code&gt;tar&lt;/code&gt; command may generate a file with unnecessary ancestor directories. use &lt;code&gt;C&lt;/code&gt; option to remain the file only:&lt;/p&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;pre&gt;&lt;code&gt;$ tar -czf xi.tar.gz -C /one/two/three/xi .&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/html&gt;</description></item></channel></rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">一位算士的博客 | a computor's blog: Posts tagged 'bash'</title>
+ <link rel="self" href="http://kejia.github.io/feeds/bash.atom.xml" />
+ <link href="http://kejia.github.io/tags/bash.html" />
+ <id>urn:http-kejia-github-io:-tags-bash-html</id>
+ <updated>2002-03-26T21:51:15Z</updated>
+ <entry>
+  <title type="text">tar a file without ancestor directories</title>
+  <link rel="alternate" href="http://kejia.github.io/blog/2002/03/26/tar-a-file-without-ancestor-directories/?utm_source=bash&amp;utm_medium=Atom" />
+  <id>urn:http-kejia-github-io:-blog-2002-03-26-tar-a-file-without-ancestor-directories</id>
+  <published>2002-03-26T21:51:15Z</published>
+  <updated>2002-03-26T21:51:15Z</updated>
+  <author>
+   <name>柯嘉 | kejia</name></author>
+  <content type="html">&lt;html&gt;
+&lt;p&gt;&lt;code&gt;tar&lt;/code&gt; command may generate a file with unnecessary ancestor directories. use &lt;code&gt;C&lt;/code&gt; option to remain the file only:&lt;/p&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;pre&gt;&lt;code&gt;$ tar -czf xi.tar.gz -C /one/two/three/xi .&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/html&gt;</content></entry></feed>
