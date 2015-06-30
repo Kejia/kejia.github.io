@@ -116,12 +116,14 @@
   ⋮
 f = f &amp;&amp; b;</code></pre></div>
 
-<p>等价于：</p>
+<p>可以写成：</p>
 
 <div class="brush: java">
  <pre><code>boolean f = true, b = true;
   ⋮
 f &amp;= b;</code></pre></div>
+
+<p>但后者诸位操作，不会进行短路。</p>
   <footer>
     <script type="text/javascript">
       !function(d,s,id){

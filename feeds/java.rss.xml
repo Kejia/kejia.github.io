@@ -51,9 +51,11 @@ System.out.println (s);&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;
   ⋮
 f = f &amp;amp;&amp;amp; b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;等价于：&lt;/p&gt;
+&lt;p&gt;可以写成：&lt;/p&gt;
 
 &lt;div class="brush: java"&gt;
  &lt;pre&gt;&lt;code&gt;boolean f = true, b = true;
   ⋮
-f &amp;amp;= b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/html&gt;</description></item></channel></rss>
+f &amp;amp;= b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;但后者诸位操作，不会进行短路。&lt;/p&gt;&lt;/html&gt;</description></item></channel></rss>
