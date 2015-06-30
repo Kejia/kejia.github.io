@@ -4,9 +4,39 @@
   <title>一位算士的博客 | a computor's blog: Posts tagged 'java'</title>
   <description>一位算士的博客 | a computor's blog: Posts tagged 'java'</description>
   <link>http://kejia.github.io/tags/java.html</link>
-  <lastBuildDate>Thu, 08 Feb 2001 07:08:32 UT</lastBuildDate>
-  <pubDate>Thu, 08 Feb 2001 07:08:32 UT</pubDate>
+  <lastBuildDate>Wed, 30 Jan 2002 16:23:10 UT</lastBuildDate>
+  <pubDate>Wed, 30 Jan 2002 16:23:10 UT</pubDate>
   <ttl>1800</ttl>
+  <item>
+   <title>java字符串格式化</title>
+   <link>http://kejia.github.io/blog/2002/01/30/java字符串格式化/?utm_source=java&amp;utm_medium=RSS</link>
+   <guid>urn:http-kejia-github-io:-blog-2002-01-30-java字符串格式化</guid>
+   <pubDate>Wed, 30 Jan 2002 16:23:10 UT</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;&lt;em&gt;java可以使用c语printf风格的字符串格式化指令。&lt;/em&gt;&lt;/p&gt;
+&lt;!-- more--&gt;
+
+&lt;p&gt;c语printf可以接受多种格式控制符，灵活控制输出格式；java也具备类似机制。&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;
+  &lt;p&gt;使用java.util.Formatter&lt;/p&gt;
+  &lt;p&gt;其构造函可接受一个String，同时提供了一系列format方法。例子：&lt;/p&gt;
+  &lt;pre class="brush: java"&gt;&lt;code&gt;StringBuffer s = new StringBuffer();
+Formatter f = new Formatter (sb);
+f.format ("e = %+8.6f", Math.E);
+out.println (s);&lt;/code&gt;&lt;/pre&gt;
+  &lt;p&gt;亦可单独使用：&lt;/p&gt;
+  &lt;pre class="brush: java"&gt;&lt;code&gt;Formatter f = new Formatter ();
+f.format ("e = %+8.6f", Math.E);
+out.println (f);&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;使用String.format&lt;/p&gt;
+  &lt;p&gt;String类直接提供了一个format方法，其封装java.util.Formatter类用于格式化字符串。例子：&lt;/p&gt;
+  &lt;pre class="brush: java"&gt;&lt;code&gt;String s = String.format ("e = %+8.6f", Math.E);
+System.out.println (s);&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;控制符详见手册。&lt;/p&gt;&lt;/html&gt;</description></item>
   <item>
    <title>java逻辑运算赋值快捷方式</title>
    <link>http://kejia.github.io/blog/2001/02/08/java逻辑运算赋值快捷方式/?utm_source=java&amp;utm_medium=RSS</link>

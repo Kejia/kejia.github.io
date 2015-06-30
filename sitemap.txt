@@ -1,7 +1,8 @@
-http://kejia.github.io/blog/2001/02/08/java逻辑运算赋值快捷方式/
+http://kejia.github.io/blog/2002/01/30/java字符串格式化/
+http://kejia.github.io/blog/2015/06/18/reading-programming-pearls/
 http://kejia.github.io/blog/2015/06/18/醪糟蛋花汤/
 http://kejia.github.io/blog/2015/06/19/take-while-of-clojure/
-http://kejia.github.io/blog/2015/06/18/reading-programming-pearls/
+http://kejia.github.io/blog/2001/02/08/java逻辑运算赋值快捷方式/
 http://kejia.github.io/blog/2015/06/12/在github-io上部署frog博客引擎/
 http://kejia.github.io/blog/2002/03/26/tar-a-file-without-ancestor-directories/
 http://kejia.github.io/blog/2002/06/23/sorting-a-binary-search-tree/
