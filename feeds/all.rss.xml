@@ -200,6 +200,19 @@ $ git add .
 $ git commit -m 'post my blog'
 $ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/html&gt;</description></item>
   <item>
+   <title>finding the intersection node of two linked lists</title>
+   <link>http://kejia.github.io/blog/2003/03/09/finding-the-intersection-node-of-two-linked-lists/?utm_source=all&amp;utm_medium=RSS</link>
+   <guid>urn:http-kejia-github-io:-blog-2003-03-09-finding-the-intersection-node-of-two-linked-lists</guid>
+   <pubDate>Sun, 09 Mar 2003 13:06:51 UT</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;&lt;em&gt;finding out the intersection of two linked lists can be solved by this interesting algorithm.&lt;/em&gt;&lt;/p&gt;
+&lt;!-- more--&gt;
+
+&lt;blockquote&gt;
+ &lt;p&gt;there are 2 linked lists, and they may intersect at some node. for example, 1 → 2 → 3 → 4 → 5  6 ↗ list 1 → 2 → 3 → 4 → 5 and 6 → 3 → 4 → 5 have the intersection node 3. find out the intersection node if any.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;here is an $O(n)$ time and $O(1)$ space algorithm. the basic idea is using 2 pointers to traverse the lists. firstly, the 2 pointers point to the heads of the lists respectively. they go through the lists step by step. one case is that the pointers point to the same node before arrive the tails, and that node is the intersection node. one of the other cases is that one pointer arrives a tail while another one not. then, assign the pointer to tail to the head of another list, and continue the process. if the lists intersect, the pointers must encounter at the intersection node. if they do not intersect, the pointers must point to a tail or the tails at some moment.&lt;/p&gt;&lt;/html&gt;</description></item>
+  <item>
    <title>sorting a binary search tree</title>
    <link>http://kejia.github.io/blog/2002/06/23/sorting-a-binary-search-tree/?utm_source=all&amp;utm_medium=RSS</link>
    <guid>urn:http-kejia-github-io:-blog-2002-06-23-sorting-a-binary-search-tree</guid>
@@ -247,26 +260,4 @@ System.out.println (f);&lt;/code&gt;&lt;/pre&gt;
   &lt;pre class="brush: java"&gt;&lt;code&gt;String s = String.format ("e = %+8.6f", Math.E);
 System.out.println (s);&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;
 
-&lt;p&gt;控制符详见手册。&lt;/p&gt;&lt;/html&gt;</description></item>
-  <item>
-   <title>java逻辑运算赋值快捷方式</title>
-   <link>http://kejia.github.io/blog/2001/02/08/java逻辑运算赋值快捷方式/?utm_source=all&amp;utm_medium=RSS</link>
-   <guid>urn:http-kejia-github-io:-blog-2001-02-08-java逻辑运算赋值快捷方式</guid>
-   <pubDate>Thu, 08 Feb 2001 07:08:32 UT</pubDate>
-   <description>&lt;html&gt;
-&lt;p&gt;&lt;em&gt;java中不存在&lt;code&gt;&amp;amp;&amp;amp;=&lt;/code&gt;，取而代之的是&lt;code&gt;&amp;amp;=&lt;/code&gt;。&lt;/em&gt;&lt;/p&gt;
-&lt;!-- more--&gt;
-
-&lt;div class="brush: java"&gt;
- &lt;pre&gt;&lt;code&gt;boolean f = true, b = true;
-  ⋮
-f = f &amp;amp;&amp;amp; b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;可以写成：&lt;/p&gt;
-
-&lt;div class="brush: java"&gt;
- &lt;pre&gt;&lt;code&gt;boolean f = true, b = true;
-  ⋮
-f &amp;amp;= b;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;但后者诸位操作，不会进行短路。&lt;/p&gt;&lt;/html&gt;</description></item></channel></rss>
+&lt;p&gt;控制符详见手册。&lt;/p&gt;&lt;/html&gt;</description></item></channel></rss>

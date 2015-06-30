@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>一位算士的博客 | a computor's blog: Posts tagged '算程'</title>
+  <description>一位算士的博客 | a computor's blog: Posts tagged '算程'</description>
+  <link>http://kejia.github.io/tags/算程.html</link>
+  <lastBuildDate>Sun, 09 Mar 2003 13:06:51 UT</lastBuildDate>
+  <pubDate>Sun, 09 Mar 2003 13:06:51 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>finding the intersection node of two linked lists</title>
+   <link>http://kejia.github.io/blog/2003/03/09/finding-the-intersection-node-of-two-linked-lists/?utm_source=算程&amp;utm_medium=RSS</link>
+   <guid>urn:http-kejia-github-io:-blog-2003-03-09-finding-the-intersection-node-of-two-linked-lists</guid>
+   <pubDate>Sun, 09 Mar 2003 13:06:51 UT</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;&lt;em&gt;finding out the intersection of two linked lists can be solved by this interesting algorithm.&lt;/em&gt;&lt;/p&gt;
+&lt;!-- more--&gt;
+
+&lt;blockquote&gt;
+ &lt;p&gt;there are 2 linked lists, and they may intersect at some node. for example, 1 → 2 → 3 → 4 → 5  6 ↗ list 1 → 2 → 3 → 4 → 5 and 6 → 3 → 4 → 5 have the intersection node 3. find out the intersection node if any.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;here is an $O(n)$ time and $O(1)$ space algorithm. the basic idea is using 2 pointers to traverse the lists. firstly, the 2 pointers point to the heads of the lists respectively. they go through the lists step by step. one case is that the pointers point to the same node before arrive the tails, and that node is the intersection node. one of the other cases is that one pointer arrives a tail while another one not. then, assign the pointer to tail to the head of another list, and continue the process. if the lists intersect, the pointers must encounter at the intersection node. if they do not intersect, the pointers must point to a tail or the tails at some moment.&lt;/p&gt;&lt;/html&gt;</description></item></channel></rss>
