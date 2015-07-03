@@ -17,13 +17,13 @@
 &lt;p&gt;&lt;em&gt;spyscope把“#spy/p”等符号置于目标符号之前即可工作，其利用了reader的一个特性：edn tagged literal。&lt;/em&gt;&lt;/p&gt;
 &lt;!-- more--&gt;
 
-&lt;p&gt;以下摘自&lt;a href="http://clojure.org/reader" title="clojure's edn tagged elements"&gt;《the reader》&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;以下摘自《&lt;a href="http://clojure.org/reader" title="clojure's edn tagged elements"&gt;the reader&lt;/a&gt;》：&lt;/p&gt;
 
 &lt;blockquote&gt;
  &lt;p&gt;Tagged literals are Clojure&amp;rsquo;s implementation of edn tagged elements.&lt;/p&gt;
  &lt;p&gt;When Clojure starts, it searches for files named data_readers.clj at the root of the classpath. Each such file must contain a Clojure map of symbols, like this:&lt;/p&gt;
  &lt;blockquote&gt;
-  &lt;p&gt;{foo/bar my.project.foo/bar  foo/baz my.project/baz}&lt;/p&gt;&lt;/blockquote&gt;
+  &lt;p&gt;{foo/bar my.project.foo/bar   foo/baz my.project/baz}&lt;/p&gt;&lt;/blockquote&gt;
  &lt;p&gt;The key in each pair is a tag that will be recognized by the Clojure reader. The value in the pair is the fully-qualified name of a Var which will be invoked by the reader to parse the form following the tag. For example, given the data_readers.clj file above, the Clojure reader would parse this form:&lt;/p&gt;
  &lt;blockquote&gt;
   &lt;p&gt;#foo/bar [1 2 3]&lt;/p&gt;&lt;/blockquote&gt;
