@@ -133,6 +133,20 @@
 
 <blockquote>
  <p>by invoking the Var #&rsquo;my.project.foo/bar on the vector [1 2 3]. The data reader function is invoked on the form AFTER it has been read as a normal Clojure data structure by the reader.</p></blockquote>
+
+<p>spyscope即据此实现，其spyscope/src/data_readers.clj定义如下：</p>
+
+<div class="brush: clojure">
+ <pre><code>{spy/p spyscope.core/print-log
+ spy/d spyscope.core/print-log-detailed
+ spy/t spyscope.core/trace}</code></pre></div>
+
+<p>用例：</p>
+
+<div class="brush: bash">
+ <pre><code>spyscope.repl=&gt; (take 20 (repeat #spy/p (+ 1 2 3)))
+6
+(6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6)</code></pre></div>
   <footer>
     <script type="text/javascript">
       !function(d,s,id){

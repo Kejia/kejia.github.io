@@ -34,7 +34,21 @@
  &lt;pre&gt;&lt;code&gt;#foo/bar [1 2 3]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;blockquote&gt;
- &lt;p&gt;by invoking the Var #&amp;rsquo;my.project.foo/bar on the vector [1 2 3]. The data reader function is invoked on the form AFTER it has been read as a normal Clojure data structure by the reader.&lt;/p&gt;&lt;/blockquote&gt;&lt;/html&gt;</content></entry>
+ &lt;p&gt;by invoking the Var #&amp;rsquo;my.project.foo/bar on the vector [1 2 3]. The data reader function is invoked on the form AFTER it has been read as a normal Clojure data structure by the reader.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;spyscope即据此实现，其spyscope/src/data_readers.clj定义如下：&lt;/p&gt;
+
+&lt;div class="brush: clojure"&gt;
+ &lt;pre&gt;&lt;code&gt;{spy/p spyscope.core/print-log
+ spy/d spyscope.core/print-log-detailed
+ spy/t spyscope.core/trace}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;用例：&lt;/p&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;pre&gt;&lt;code&gt;spyscope.repl=&amp;gt; (take 20 (repeat #spy/p (+ 1 2 3)))
+6
+(6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/html&gt;</content></entry>
  <entry>
   <title type="text">take-while of clojure</title>
   <link rel="alternate" href="http://kejia.github.io/blog/2015/06/19/take-while-of-clojure/?utm_source=clojure&amp;utm_medium=Atom" />
