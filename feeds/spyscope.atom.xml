@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
- <title type="text">一位算士的博客 | a computor's blog: Posts tagged 'clojure'</title>
- <link rel="self" href="http://kejia.github.io/feeds/clojure.atom.xml" />
- <link href="http://kejia.github.io/tags/clojure.html" />
- <id>urn:http-kejia-github-io:-tags-clojure-html</id>
+ <title type="text">一位算士的博客 | a computor's blog: Posts tagged 'spyscope'</title>
+ <link rel="self" href="http://kejia.github.io/feeds/spyscope.atom.xml" />
+ <link href="http://kejia.github.io/tags/spyscope.html" />
+ <id>urn:http-kejia-github-io:-tags-spyscope-html</id>
  <updated>2015-07-03T19:42:51Z</updated>
  <entry>
   <title type="text">spyscope实现原理</title>
-  <link rel="alternate" href="http://kejia.github.io/blog/2015/07/03/spyscope实现原理/?utm_source=clojure&amp;utm_medium=Atom" />
+  <link rel="alternate" href="http://kejia.github.io/blog/2015/07/03/spyscope实现原理/?utm_source=spyscope&amp;utm_medium=Atom" />
   <id>urn:http-kejia-github-io:-blog-2015-07-03-spyscope实现原理</id>
   <published>2015-07-03T19:42:51Z</published>
   <updated>2015-07-03T19:42:51Z</updated>
@@ -29,23 +29,4 @@
  &lt;p&gt;The key in each pair is a tag that will be recognized by the Clojure reader. The value in the pair is the fully-qualified name of a Var which will be invoked by the reader to parse the form following the tag. For example, given the data_readers.clj file above, the Clojure reader would parse this form:&lt;/p&gt;
  &lt;blockquote&gt;
   &lt;h1 id="foobar-"&gt;foo/bar [1 2 3]&lt;/h1&gt;&lt;/blockquote&gt;
- &lt;p&gt;by invoking the Var #&amp;rsquo;my.project.foo/bar on the vector [1 2 3]. The data reader function is invoked on the form AFTER it has been read as a normal Clojure data structure by the reader.&lt;/p&gt;&lt;/blockquote&gt;&lt;/html&gt;</content></entry>
- <entry>
-  <title type="text">take-while of clojure</title>
-  <link rel="alternate" href="http://kejia.github.io/blog/2015/06/19/take-while-of-clojure/?utm_source=clojure&amp;utm_medium=Atom" />
-  <id>urn:http-kejia-github-io:-blog-2015-06-19-take-while-of-clojure</id>
-  <published>2015-06-19T14:20:23Z</published>
-  <updated>2015-06-19T14:20:23Z</updated>
-  <author>
-   <name>柯嘉 | kejia</name></author>
-  <content type="html">&lt;html&gt;
-&lt;p&gt;in clojure, &lt;code&gt;take-while' is similar to&lt;/code&gt;filter&amp;rsquo;, but they are different.&lt;/p&gt;
-&lt;!-- more--&gt;
-
-&lt;div class="brush: clojure"&gt;
- &lt;pre&gt;&lt;code&gt;&amp;gt; (filter pos? [8 0 -1 2 -3])
-(8 2)
-&amp;gt; (take-while pos? [8 0 -1 2 -3])
-(8)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;`take-while&amp;rsquo; stops traversing the list when the predicate is false.&lt;/p&gt;&lt;/html&gt;</content></entry></feed>
+ &lt;p&gt;by invoking the Var #&amp;rsquo;my.project.foo/bar on the vector [1 2 3]. The data reader function is invoked on the form AFTER it has been read as a normal Clojure data structure by the reader.&lt;/p&gt;&lt;/blockquote&gt;&lt;/html&gt;</content></entry></feed>
