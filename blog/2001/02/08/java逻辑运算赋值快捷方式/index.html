@@ -75,9 +75,13 @@
 
 <li><a href="/tags/racket.html">racket</a></li>
 
+<li><a href="/tags/spyscope.html">spyscope</a></li>
+
 <li><a href="/tags/博客.html">博客</a></li>
 
 <li><a href="/tags/教程.html">教程</a></li>
+
+<li><a href="/tags/算程.html">算程</a></li>
 
 <li><a href="/tags/食谱.html">食谱</a></li>
               </ul>
@@ -112,16 +116,42 @@
 <!-- more-->
 
 <div class="brush: java">
- <pre><code>boolean f = true, b = true;
-  ⋮
-f = f &amp;&amp; b;</code></pre></div>
+ <table class="sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre>1
+2
+3</pre></div></td>
+    <td class="code">
+     <div class="source">
+      <pre><span class="kt">boolean</span> <span class="n">f</span> <span class="o">=</span> <span class="kc">true</span><span class="o">,</span> <span class="n">b</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+  <span class="err">⋮</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">f</span> <span class="o">&amp;&amp;</span> <span class="n">b</span><span class="o">;</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
 
 <p>可以写成：</p>
 
 <div class="brush: java">
- <pre><code>boolean f = true, b = true;
-  ⋮
-f &amp;= b;</code></pre></div>
+ <table class="sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre>1
+2
+3</pre></div></td>
+    <td class="code">
+     <div class="source">
+      <pre><span class="kt">boolean</span> <span class="n">f</span> <span class="o">=</span> <span class="kc">true</span><span class="o">,</span> <span class="n">b</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+  <span class="err">⋮</span>
+<span class="n">f</span> <span class="o">&amp;=</span> <span class="n">b</span><span class="o">;</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
 
 <p>但后者诸位操作，不会进行短路。</p>
   <footer>

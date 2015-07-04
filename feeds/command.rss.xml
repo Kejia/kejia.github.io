@@ -16,4 +16,15 @@
 &lt;p&gt;&lt;code&gt;tar&lt;/code&gt; command may generate a file with unnecessary ancestor directories. use &lt;code&gt;C&lt;/code&gt; option to remain the file only:&lt;/p&gt;
 
 &lt;div class="brush: bash"&gt;
- &lt;pre&gt;&lt;code&gt;$ tar -czf xi.tar.gz -C /one/two/three/xi .&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/html&gt;</description></item></channel></rss>
+ &lt;table class="sourcetable"&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class="linenos"&gt;
+     &lt;div class="linenodiv"&gt;
+      &lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="code"&gt;
+     &lt;div class="source"&gt;
+      &lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;tar -czf xi.tar.gz -C /one/two/three/xi .
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/html&gt;</description></item></channel></rss>

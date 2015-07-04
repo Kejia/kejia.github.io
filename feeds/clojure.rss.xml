@@ -23,14 +23,37 @@
  &lt;p&gt;When Clojure starts, it searches for files named data_readers.clj at the root of the classpath. Each such file must contain a Clojure map of symbols, like this:&lt;/p&gt;&lt;/blockquote&gt;
 
 &lt;div class="brush: clojure"&gt;
- &lt;pre&gt;&lt;code&gt;{foo/bar my.project.foo/bar
- foo/baz my.project/baz}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+ &lt;table class="sourcetable"&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class="linenos"&gt;
+     &lt;div class="linenodiv"&gt;
+      &lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="code"&gt;
+     &lt;div class="source"&gt;
+      &lt;pre&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nv"&gt;foo/bar&lt;/span&gt; &lt;span class="nv"&gt;my.project.foo/bar&lt;/span&gt;
+ &lt;span class="nv"&gt;foo/baz&lt;/span&gt; &lt;span class="nv"&gt;my.project/baz&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
 
 &lt;blockquote&gt;
  &lt;p&gt;The key in each pair is a tag that will be recognized by the Clojure reader. The value in the pair is the fully-qualified name of a Var which will be invoked by the reader to parse the form following the tag. For example, given the data_readers.clj file above, the Clojure reader would parse this form:&lt;/p&gt;&lt;/blockquote&gt;
 
 &lt;div class="brush: clojure"&gt;
- &lt;pre&gt;&lt;code&gt;#foo/bar [1 2 3]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+ &lt;table class="sourcetable"&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class="linenos"&gt;
+     &lt;div class="linenodiv"&gt;
+      &lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="code"&gt;
+     &lt;div class="source"&gt;
+      &lt;pre&gt;&lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="nv"&gt;foo/bar&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
 
 &lt;blockquote&gt;
  &lt;p&gt;by invoking the Var #&amp;rsquo;my.project.foo/bar on the vector [1 2 3]. The data reader function is invoked on the form AFTER it has been read as a normal Clojure data structure by the reader.&lt;/p&gt;&lt;/blockquote&gt;
@@ -38,9 +61,22 @@
 &lt;p&gt;&lt;a href="http://github.com/dgrnbrg/spyscope"&gt;spyscope&lt;/a&gt;即据此实现，其spyscope/src/data_readers.clj定义如下：&lt;/p&gt;
 
 &lt;div class="brush: clojure"&gt;
- &lt;pre&gt;&lt;code&gt;{spy/p spyscope.core/print-log
- spy/d spyscope.core/print-log-detailed
- spy/t spyscope.core/trace}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+ &lt;table class="sourcetable"&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class="linenos"&gt;
+     &lt;div class="linenodiv"&gt;
+      &lt;pre&gt;1
+2
+3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="code"&gt;
+     &lt;div class="source"&gt;
+      &lt;pre&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nv"&gt;spy/p&lt;/span&gt; &lt;span class="nv"&gt;spyscope.core/print-log&lt;/span&gt;
+ &lt;span class="nv"&gt;spy/d&lt;/span&gt; &lt;span class="nv"&gt;spyscope.core/print-log-detailed&lt;/span&gt;
+ &lt;span class="nv"&gt;spy/t&lt;/span&gt; &lt;span class="nv"&gt;spyscope.core/trace&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
 
 &lt;p&gt;spyscope.core/print-log等被定义为普通函数： &lt;code&gt;clojure
 (defn print-log
@@ -49,9 +85,22 @@
   `(doto ~form pp/pprint))&lt;/code&gt; 用例：&lt;/p&gt;
 
 &lt;div class="brush: bash"&gt;
- &lt;pre&gt;&lt;code&gt;spyscope.repl=&amp;gt; (take 20 (repeat #spy/p (+ 1 2 3)))
+ &lt;table class="sourcetable"&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class="linenos"&gt;
+     &lt;div class="linenodiv"&gt;
+      &lt;pre&gt;1
+2
+3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="code"&gt;
+     &lt;div class="source"&gt;
+      &lt;pre&gt;spyscope.repl&lt;span class="o"&gt;=&lt;/span&gt;&amp;gt; &lt;span class="o"&gt;(&lt;/span&gt;take &lt;span class="m"&gt;20&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;repeat &lt;span class="c"&gt;#spy/p (+ 1 2 3)))&lt;/span&gt;
 6
-(6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/html&gt;</description></item>
+&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt; 6&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/html&gt;</description></item>
   <item>
    <title>take-while of clojure</title>
    <link>http://kejia.github.io/blog/2015/06/19/take-while-of-clojure/?utm_source=clojure&amp;utm_medium=RSS</link>
@@ -62,9 +111,23 @@
 &lt;!-- more--&gt;
 
 &lt;div class="brush: clojure"&gt;
- &lt;pre&gt;&lt;code&gt;&amp;gt; (filter pos? [8 0 -1 2 -3])
-(8 2)
-&amp;gt; (take-while pos? [8 0 -1 2 -3])
-(8)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+ &lt;table class="sourcetable"&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class="linenos"&gt;
+     &lt;div class="linenodiv"&gt;
+      &lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="code"&gt;
+     &lt;div class="source"&gt;
+      &lt;pre&gt;&lt;span class="nb"&gt;&amp;gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;filter pos? &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="mi"&gt;-1&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="mi"&gt;-3&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;&amp;gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;take-while pos? &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="mi"&gt;-1&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="mi"&gt;-3&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
 
 &lt;p&gt;`take-while&amp;rsquo; stops traversing the list when the predicate is false.&lt;/p&gt;&lt;/html&gt;</description></item></channel></rss>

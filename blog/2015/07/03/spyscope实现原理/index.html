@@ -122,14 +122,37 @@
  <p>When Clojure starts, it searches for files named data_readers.clj at the root of the classpath. Each such file must contain a Clojure map of symbols, like this:</p></blockquote>
 
 <div class="brush: clojure">
- <pre><code>{foo/bar my.project.foo/bar
- foo/baz my.project/baz}</code></pre></div>
+ <table class="sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre>1
+2</pre></div></td>
+    <td class="code">
+     <div class="source">
+      <pre><span class="p">{</span><span class="nv">foo/bar</span> <span class="nv">my.project.foo/bar</span>
+ <span class="nv">foo/baz</span> <span class="nv">my.project/baz</span><span class="p">}</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
 
 <blockquote>
  <p>The key in each pair is a tag that will be recognized by the Clojure reader. The value in the pair is the fully-qualified name of a Var which will be invoked by the reader to parse the form following the tag. For example, given the data_readers.clj file above, the Clojure reader would parse this form:</p></blockquote>
 
 <div class="brush: clojure">
- <pre><code>#foo/bar [1 2 3]</code></pre></div>
+ <table class="sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre>1</pre></div></td>
+    <td class="code">
+     <div class="source">
+      <pre><span class="o">#</span><span class="nv">foo/bar</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
 
 <blockquote>
  <p>by invoking the Var #&rsquo;my.project.foo/bar on the vector [1 2 3]. The data reader function is invoked on the form AFTER it has been read as a normal Clojure data structure by the reader.</p></blockquote>
@@ -137,9 +160,22 @@
 <p><a href="http://github.com/dgrnbrg/spyscope">spyscope</a>即据此实现，其spyscope/src/data_readers.clj定义如下：</p>
 
 <div class="brush: clojure">
- <pre><code>{spy/p spyscope.core/print-log
- spy/d spyscope.core/print-log-detailed
- spy/t spyscope.core/trace}</code></pre></div>
+ <table class="sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre>1
+2
+3</pre></div></td>
+    <td class="code">
+     <div class="source">
+      <pre><span class="p">{</span><span class="nv">spy/p</span> <span class="nv">spyscope.core/print-log</span>
+ <span class="nv">spy/d</span> <span class="nv">spyscope.core/print-log-detailed</span>
+ <span class="nv">spy/t</span> <span class="nv">spyscope.core/trace</span><span class="p">}</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
 
 <p>spyscope.core/print-log等被定义为普通函数： <code>clojure
 (defn print-log
@@ -148,9 +184,22 @@
   `(doto ~form pp/pprint))</code> 用例：</p>
 
 <div class="brush: bash">
- <pre><code>spyscope.repl=&gt; (take 20 (repeat #spy/p (+ 1 2 3)))
+ <table class="sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre>1
+2
+3</pre></div></td>
+    <td class="code">
+     <div class="source">
+      <pre>spyscope.repl<span class="o">=</span>&gt; <span class="o">(</span>take <span class="m">20</span> <span class="o">(</span>repeat <span class="c">#spy/p (+ 1 2 3)))</span>
 6
-(6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6)</code></pre></div>
+<span class="o">(</span><span class="m">6</span> <span class="m">6</span> <span class="m">6</span> <span class="m">6</span> <span class="m">6</span> <span class="m">6</span> <span class="m">6</span> <span class="m">6</span> <span class="m">6</span> <span class="m">6</span> <span class="m">6</span> <span class="m">6</span> <span class="m">6</span> <span class="m">6</span> <span class="m">6</span> <span class="m">6</span> <span class="m">6</span> <span class="m">6</span> <span class="m">6</span> 6<span class="o">)</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
   <footer>
     <script type="text/javascript">
       !function(d,s,id){

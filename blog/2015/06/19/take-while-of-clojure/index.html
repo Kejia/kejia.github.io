@@ -116,10 +116,24 @@
 <!-- more-->
 
 <div class="brush: clojure">
- <pre><code>&gt; (filter pos? [8 0 -1 2 -3])
-(8 2)
-&gt; (take-while pos? [8 0 -1 2 -3])
-(8)</code></pre></div>
+ <table class="sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre>1
+2
+3
+4</pre></div></td>
+    <td class="code">
+     <div class="source">
+      <pre><span class="nb">&gt; </span><span class="p">(</span><span class="nb">filter pos? </span><span class="p">[</span><span class="mi">8</span> <span class="mi">0</span> <span class="mi">-1</span> <span class="mi">2</span> <span class="mi">-3</span><span class="p">])</span>
+<span class="p">(</span><span class="mi">8</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">&gt; </span><span class="p">(</span><span class="nb">take-while pos? </span><span class="p">[</span><span class="mi">8</span> <span class="mi">0</span> <span class="mi">-1</span> <span class="mi">2</span> <span class="mi">-3</span><span class="p">])</span>
+<span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
 
 <p>`take-while&rsquo; stops traversing the list when the predicate is false.</p>
   <footer>
