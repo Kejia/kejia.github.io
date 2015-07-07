@@ -6,7 +6,7 @@
     <title>一位算士的博客 | a computor's blog (page 2)</title>
     <meta name="description" content="一位算士的博客 | a computor's blog (page 2)">
     <meta name="author"      content="柯嘉 | kejia">
-    <meta name="keywords"    content="教程, command, java, 算程, bash, racket, algorithm, 博客, all, clojure, spyscope, frog, 食谱, programming pearls">
+    <meta name="keywords"    content="教程, command, java, 算程, gnome, racket, grub2, bash, algorithm, 博客, all, clojure, spyscope, jessie, gdm, frog, 食谱, debian, programming pearls">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
     <link rel="canonical" href="http://kejia.github.io/index-2.html">
@@ -67,9 +67,19 @@
 
 <li><a href="/tags/command.html">command</a></li>
 
+<li><a href="/tags/debian.html">debian</a></li>
+
 <li><a href="/tags/frog.html">frog</a></li>
 
+<li><a href="/tags/gdm.html">gdm</a></li>
+
+<li><a href="/tags/gnome.html">gnome</a></li>
+
+<li><a href="/tags/grub2.html">grub2</a></li>
+
 <li><a href="/tags/java.html">java</a></li>
+
+<li><a href="/tags/jessie.html">jessie</a></li>
 
 <li><a href="/tags/programming-pearls.html">programming pearls</a></li>
 
@@ -106,6 +116,38 @@
 
 
           <article>
+  <header>
+    <h2><a href='/blog/2002/06/23/sorting-a-binary-search-tree/'>sorting a binary search tree</a></h2>
+    <p class='date-and-tags'>
+<time datetime="2002-06-23" pubdate="true">2002-06-23</time> :: <span class="tags"><a href="/tags/algorithm.html">algorithm</a></span></p>
+  </header>
+
+<p>in-order traversal can be used to sort a binary search tree.</p>
+</article>
+<article>
+  <header>
+    <h2><a href='/blog/2002/03/26/tar-a-file-without-ancestor-directories/'>tar a file without ancestor directories</a></h2>
+    <p class='date-and-tags'>
+<time datetime="2002-03-26" pubdate="true">2002-03-26</time> :: <span class="tags"><a href="/tags/bash.html">bash</a>, <a href="/tags/command.html">command</a></span></p>
+  </header>
+
+<p><code>tar</code> command may generate a file with unnecessary ancestor directories. use <code>C</code> option to remain the file only:</p>
+
+<div class="brush: bash">
+ <table class="sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre>1</pre></div></td>
+    <td class="code">
+     <div class="source">
+      <pre><span class="nv">$ </span>tar -czf xi.tar.gz -C /one/two/three/xi .
+</pre></div>
+</td></tr></tbody></table>
+</div>
+</article>
+<article>
   <header>
     <h2><a href='/blog/2002/01/30/java字符串格式化/'>java字符串格式化</a></h2>
     <p class='date-and-tags'>

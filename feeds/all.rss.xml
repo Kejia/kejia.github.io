@@ -4,9 +4,117 @@
   <title>一位算士的博客 | a computor's blog: 一位算士的博客 | a computor's blog</title>
   <description>一位算士的博客 | a computor's blog: 一位算士的博客 | a computor's blog</description>
   <link>http://kejia.github.io/index.html</link>
-  <lastBuildDate>Fri, 03 Jul 2015 19:42:51 UT</lastBuildDate>
-  <pubDate>Fri, 03 Jul 2015 19:42:51 UT</pubDate>
+  <lastBuildDate>Tue, 07 Jul 2015 03:08:17 UT</lastBuildDate>
+  <pubDate>Tue, 07 Jul 2015 03:08:17 UT</pubDate>
   <ttl>1800</ttl>
+  <item>
+   <title>customizing the background of gnome3 login screen</title>
+   <link>http://kejia.github.io/blog/2015/07/06/customizing-the-background-of-gnome3-login-screen/?utm_source=all&amp;utm_medium=RSS</link>
+   <guid>urn:http-kejia-github-io:-blog-2015-07-06-customizing-the-background-of-gnome3-login-screen</guid>
+   <pubDate>Tue, 07 Jul 2015 03:08:17 UT</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;&lt;em&gt;gnome conf tools on debian jessie, such as dconf-editor, are not robust at present, and it&amp;rsquo;s not straightforward to customize the background of gnome3 login screen. modifying the default background of gnome3 login screen on debian jessie can be done by editing file &lt;em&gt;/usr/share/gnome-shell/theme/gnome-shell.css&lt;/em&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;!-- more--&gt;
+
+&lt;p&gt;open file &lt;em&gt;/usr/share/gnome-shell/theme/gnome-shell.css&lt;/em&gt; and edit the following block:&lt;/p&gt;
+
+&lt;div class="brush: css"&gt;
+ &lt;table class="sourcetable"&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class="linenos"&gt;
+     &lt;div class="linenodiv"&gt;
+      &lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="code"&gt;
+     &lt;div class="source"&gt;
+      &lt;pre&gt;&lt;span class="nf"&gt;#lockDialogGroup&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;background&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#2e3436&lt;/span&gt; &lt;span class="sx"&gt;url(gdm.png)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+	&lt;span class="k"&gt;background-repeat&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="k"&gt;no-repeat&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;background&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;size&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;cover&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;background-position&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="k"&gt;center&lt;/span&gt; &lt;span class="k"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;here, &lt;em&gt;gdm.png&lt;/em&gt; is the image for gnome3 login screen, and it should be placed in the directory &lt;em&gt;/usr/share/gnome-shell/theme&lt;/em&gt;, i.e. the directory containing &lt;em&gt;gnome-shell.css&lt;/em&gt;.&lt;/p&gt;&lt;/html&gt;</description></item>
+  <item>
+   <title>customizing grub2 background</title>
+   <link>http://kejia.github.io/blog/2015/07/06/customizing-grub2-background/?utm_source=all&amp;utm_medium=RSS</link>
+   <guid>urn:http-kejia-github-io:-blog-2015-07-06-customizing-grub2-background</guid>
+   <pubDate>Tue, 07 Jul 2015 02:50:18 UT</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;&lt;em&gt;customizing the background of grub2 on debian jessie is not documented much, and i have done as follows.&lt;/em&gt;&lt;/p&gt;
+&lt;!-- more--&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;finding out grub2 background resolution&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;at grub2 booting menu, type &lt;code&gt;c&lt;/code&gt; and enter grub2 shell:&lt;/p&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;table class="sourcetable"&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class="linenos"&gt;
+     &lt;div class="linenodiv"&gt;
+      &lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="code"&gt;
+     &lt;div class="source"&gt;
+      &lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;vbeinfo
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;the working resolution is the line marked by asterisk.&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;making your background image&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;the image used for the grub2 background must have the same resolution as mentioned above. export the image as &lt;em&gt;tga&lt;/em&gt; format.&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;specifying your image as the grub2 background&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;editing file &lt;em&gt;/etc/default/grub&lt;/em&gt; and adding the following line:&lt;/p&gt;
+
+&lt;div class="brush: text"&gt;
+ &lt;table class="sourcetable"&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class="linenos"&gt;
+     &lt;div class="linenodiv"&gt;
+      &lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="code"&gt;
+     &lt;div class="source"&gt;
+      &lt;pre&gt;GRUB_BACKGROUND="/boot/grub/grub2.tga"
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;/boot/grub/grub2.tga&lt;/em&gt; is your grub2 background image.&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;updating grub2 conf&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;table class="sourcetable"&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class="linenos"&gt;
+     &lt;div class="linenodiv"&gt;
+      &lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="code"&gt;
+     &lt;div class="source"&gt;
+      &lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;update-grub2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/html&gt;</description></item>
   <item>
    <title>spyscope实现原理</title>
    <link>http://kejia.github.io/blog/2015/07/03/spyscope实现原理/?utm_source=all&amp;utm_medium=RSS</link>
@@ -415,32 +523,4 @@ $ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&g
 &lt;blockquote&gt;
  &lt;p&gt;find out the intersection node if any.&lt;/p&gt;&lt;/blockquote&gt;
 
-&lt;p&gt;here is an $O(n)$ time and $O(1)$ space algorithm. the basic idea is using 2 pointers to traverse the lists. firstly, the 2 pointers point to the heads of the lists respectively. they go through the lists step by step. one case is that the pointers point to the same node before arrive the tails, and that node is the intersection node. one of the other cases is that one pointer arrives a tail while another one not. then, assign the pointer to tail to the head of another list, and continue the process. if the lists intersect, the pointers must encounter at the intersection node. if they do not intersect, the pointers must point to a tail or the tails at some moment.&lt;/p&gt;&lt;/html&gt;</description></item>
-  <item>
-   <title>sorting a binary search tree</title>
-   <link>http://kejia.github.io/blog/2002/06/23/sorting-a-binary-search-tree/?utm_source=all&amp;utm_medium=RSS</link>
-   <guid>urn:http-kejia-github-io:-blog-2002-06-23-sorting-a-binary-search-tree</guid>
-   <pubDate>Sun, 23 Jun 2002 22:10:55 UT</pubDate>
-   <description>&lt;html&gt;
-&lt;p&gt;in-order traversal can be used to sort a binary search tree.&lt;/p&gt;&lt;/html&gt;</description></item>
-  <item>
-   <title>tar a file without ancestor directories</title>
-   <link>http://kejia.github.io/blog/2002/03/26/tar-a-file-without-ancestor-directories/?utm_source=all&amp;utm_medium=RSS</link>
-   <guid>urn:http-kejia-github-io:-blog-2002-03-26-tar-a-file-without-ancestor-directories</guid>
-   <pubDate>Tue, 26 Mar 2002 21:51:15 UT</pubDate>
-   <description>&lt;html&gt;
-&lt;p&gt;&lt;code&gt;tar&lt;/code&gt; command may generate a file with unnecessary ancestor directories. use &lt;code&gt;C&lt;/code&gt; option to remain the file only:&lt;/p&gt;
-
-&lt;div class="brush: bash"&gt;
- &lt;table class="sourcetable"&gt;
-  &lt;tbody&gt;
-   &lt;tr&gt;
-    &lt;td class="linenos"&gt;
-     &lt;div class="linenodiv"&gt;
-      &lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
-    &lt;td class="code"&gt;
-     &lt;div class="source"&gt;
-      &lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;tar -czf xi.tar.gz -C /one/two/three/xi .
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;&lt;/html&gt;</description></item></channel></rss>
+&lt;p&gt;here is an $O(n)$ time and $O(1)$ space algorithm. the basic idea is using 2 pointers to traverse the lists. firstly, the 2 pointers point to the heads of the lists respectively. they go through the lists step by step. one case is that the pointers point to the same node before arrive the tails, and that node is the intersection node. one of the other cases is that one pointer arrives a tail while another one not. then, assign the pointer to tail to the head of another list, and continue the process. if the lists intersect, the pointers must encounter at the intersection node. if they do not intersect, the pointers must point to a tail or the tails at some moment.&lt;/p&gt;&lt;/html&gt;</description></item></channel></rss>

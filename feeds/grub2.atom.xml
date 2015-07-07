@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">一位算士的博客 | a computor's blog: Posts tagged 'grub2'</title>
+ <link rel="self" href="http://kejia.github.io/feeds/grub2.atom.xml" />
+ <link href="http://kejia.github.io/tags/grub2.html" />
+ <id>urn:http-kejia-github-io:-tags-grub2-html</id>
+ <updated>2015-07-07T02:50:18Z</updated>
+ <entry>
+  <title type="text">customizing grub2 background</title>
+  <link rel="alternate" href="http://kejia.github.io/blog/2015/07/06/customizing-grub2-background/?utm_source=grub2&amp;utm_medium=Atom" />
+  <id>urn:http-kejia-github-io:-blog-2015-07-06-customizing-grub2-background</id>
+  <published>2015-07-07T02:50:18Z</published>
+  <updated>2015-07-07T02:50:18Z</updated>
+  <author>
+   <name>柯嘉 | kejia</name></author>
+  <content type="html">&lt;html&gt;
+&lt;p&gt;&lt;em&gt;customizing the background of grub2 on debian jessie is not documented much, and i have done as follows.&lt;/em&gt;&lt;/p&gt;
+&lt;!-- more--&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;finding out grub2 background resolution&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;at grub2 booting menu, type &lt;code&gt;c&lt;/code&gt; and enter grub2 shell:&lt;/p&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;table class="sourcetable"&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class="linenos"&gt;
+     &lt;div class="linenodiv"&gt;
+      &lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="code"&gt;
+     &lt;div class="source"&gt;
+      &lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;vbeinfo
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;the working resolution is the line marked by asterisk.&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;making your background image&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;the image used for the grub2 background must have the same resolution as mentioned above. export the image as &lt;em&gt;tga&lt;/em&gt; format.&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;specifying your image as the grub2 background&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;editing file &lt;em&gt;/etc/default/grub&lt;/em&gt; and adding the following line:&lt;/p&gt;
+
+&lt;div class="brush: text"&gt;
+ &lt;table class="sourcetable"&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class="linenos"&gt;
+     &lt;div class="linenodiv"&gt;
+      &lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="code"&gt;
+     &lt;div class="source"&gt;
+      &lt;pre&gt;GRUB_BACKGROUND="/boot/grub/grub2.tga"
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;/boot/grub/grub2.tga&lt;/em&gt; is your grub2 background image.&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;updating grub2 conf&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;table class="sourcetable"&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class="linenos"&gt;
+     &lt;div class="linenodiv"&gt;
+      &lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="code"&gt;
+     &lt;div class="source"&gt;
+      &lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;update-grub2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;/html&gt;</content></entry></feed>

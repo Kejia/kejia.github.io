@@ -3,14 +3,14 @@
   <head>
 
     <meta charset="utf-8">
-    <title>一位算士的博客 | a computor's blog</title>
-    <meta name="description" content="一位算士的博客 | a computor's blog">
+    <title>customizing the background of gnome3 login screen</title>
+    <meta name="description" content="_gnome conf tools on debian jessie, such as dconf-editor, are not robust at present, and it's not straightforward to customize the background of gnome3 login screen. modifying the default background of gnome3 login screen on debian jessie can be done by e...">
     <meta name="author"      content="柯嘉 | kejia">
-    <meta name="keywords"    content="教程, command, java, 算程, gnome, racket, grub2, bash, algorithm, 博客, all, clojure, spyscope, jessie, gdm, frog, 食谱, debian, programming pearls">
+    <meta name="keywords"    content="debian, jessie, gnome, gdm">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
-    <link rel="canonical" href="http://kejia.github.io/index.html">
-
+    <link rel="canonical" href="http://kejia.github.io/blog/2015/07/06/customizing-the-background-of-gnome3-login-screen/">
+    <link rel="next" href="/blog/2015/07/06/customizing-grub2-background/">
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
@@ -111,99 +111,85 @@
         <!-- Main column -->
         <div id="content" class="col-md-12">
 
-          <h1>道法自然 | being natural</h1>
-          <p>心止如水 | waterful peace</p> 
+
 
 
 
           <article>
   <header>
-    <h2><a href='/blog/2015/07/06/customizing-the-background-of-gnome3-login-screen/'>customizing the background of gnome3 login screen</a></h2>
+    <h1>customizing the background of gnome3 login screen</h1>
     <p class='date-and-tags'>
 <time datetime="2015-07-06" pubdate="true">2015-07-06</time> :: <span class="tags"><a href="/tags/debian.html">debian</a>, <a href="/tags/jessie.html">jessie</a>, <a href="/tags/gnome.html">gnome</a>, <a href="/tags/gdm.html">gdm</a></span></p>
   </header>
 
 <p><em>gnome conf tools on debian jessie, such as dconf-editor, are not robust at present, and it&rsquo;s not straightforward to customize the background of gnome3 login screen. modifying the default background of gnome3 login screen on debian jessie can be done by editing file <em>/usr/share/gnome-shell/theme/gnome-shell.css</em>.</em></p>
-<footer class="read-more"><a href="/blog/2015/07/06/customizing-the-background-of-gnome3-login-screen/">&hellip;more&hellip;</a></footer>
-</article>
-<article>
-  <header>
-    <h2><a href='/blog/2015/07/06/customizing-grub2-background/'>customizing grub2 background</a></h2>
-    <p class='date-and-tags'>
-<time datetime="2015-07-06" pubdate="true">2015-07-06</time> :: <span class="tags"><a href="/tags/debian.html">debian</a>, <a href="/tags/jessie.html">jessie</a>, <a href="/tags/grub2.html">grub2</a></span></p>
-  </header>
+<!-- more-->
 
-<p><em>customizing the background of grub2 on debian jessie is not documented much, and i have done as follows.</em></p>
-<footer class="read-more"><a href="/blog/2015/07/06/customizing-grub2-background/">&hellip;more&hellip;</a></footer>
-</article>
-<article>
-  <header>
-    <h2><a href='/blog/2015/07/03/spyscope实现原理/'>spyscope实现原理</a></h2>
-    <p class='date-and-tags'>
-<time datetime="2015-07-03" pubdate="true">2015-07-03</time> :: <span class="tags"><a href="/tags/clojure.html">clojure</a>, <a href="/tags/spyscope.html">spyscope</a></span></p>
-  </header>
+<p>open file <em>/usr/share/gnome-shell/theme/gnome-shell.css</em> and edit the following block:</p>
 
-<p><em>目前，clojure尚未提供完善的非repl调试器，<a href="http://github.com/dgrnbrg/spyscope">spyscope</a>提供了较好的调试接口。<a href="http://github.com/dgrnbrg/spyscope">spyscope</a>把“#spy/p”等符号置于目标符号之前即可工作，其利用了reader的一个特性：edn tagged literal。</em></p>
-<footer class="read-more"><a href="/blog/2015/07/03/spyscope实现原理/">&hellip;more&hellip;</a></footer>
-</article>
-<article>
-  <header>
-    <h2><a href='/blog/2015/06/19/take-while-of-clojure/'>take-while of clojure</a></h2>
-    <p class='date-and-tags'>
-<time datetime="2015-06-19" pubdate="true">2015-06-19</time> :: <span class="tags"><a href="/tags/clojure.html">clojure</a></span></p>
-  </header>
+<div class="brush: css">
+ <table class="sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre>1
+2
+3
+4
+5
+6</pre></div></td>
+    <td class="code">
+     <div class="source">
+      <pre><span class="nf">#lockDialogGroup</span> <span class="p">{</span>
+    <span class="k">background</span><span class="o">:</span> <span class="m">#2e3436</span> <span class="sx">url(gdm.png)</span><span class="p">;</span>
+	<span class="k">background-repeat</span><span class="o">:</span> <span class="k">no-repeat</span><span class="p">;</span>
+    <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+    <span class="k">background-position</span><span class="o">:</span> <span class="k">center</span> <span class="k">center</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
 
-<p>in clojure, <code>take-while' is similar to</code>filter&rsquo;, but they are different.</p>
-<footer class="read-more"><a href="/blog/2015/06/19/take-while-of-clojure/">&hellip;more&hellip;</a></footer>
-</article>
-<article>
-  <header>
-    <h2><a href='/blog/2015/06/18/醪糟蛋花汤/'>醪糟蛋花汤</a></h2>
-    <p class='date-and-tags'>
-<time datetime="2015-06-18" pubdate="true">2015-06-18</time> :: <span class="tags"><a href="/tags/食谱.html">食谱</a></span></p>
-  </header>
+<p>here, <em>gdm.png</em> is the image for gnome3 login screen, and it should be placed in the directory <em>/usr/share/gnome-shell/theme</em>, i.e. the directory containing <em>gnome-shell.css</em>.</p>
+  <footer>
+    <script type="text/javascript">
+      !function(d,s,id){
+          var js,fjs=d.getElementsByTagName(s)[0];
+          if(!d.getElementById(id)){
+              js=d.createElement(s);
+              js.id=id;
+              js.src="//platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js,fjs);
+          }
+      }(document,"script","twitter-wjs");
+    </script>
+    <a href="https://twitter.com/share"
+       class="twitter-share-button"
+       data-url="http://kejia.github.io/blog/2015/07/06/customizing-the-background-of-gnome3-login-screen/"
+       data-dnt="true">
+      "Tweet"</a>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <g:plusone size="medium" href="http://kejia.github.io/blog/2015/07/06/customizing-the-background-of-gnome3-login-screen/"></g:plusone>
+    <script type="text/javascript">
+      var disqus_shortname = 'shortname';
+      (function() {
+          var dsq = document.createElement('script');
+          dsq.type = 'text/javascript';
+          dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <div id="disqus_thread"></div>
+    <ul class="pager">
 
-<p><em>醪糟蛋花汤有丰胸、下奶的功效。</em></p>
-<footer class="read-more"><a href="/blog/2015/06/18/醪糟蛋花汤/">&hellip;more&hellip;</a></footer>
+    <li class="next">
+      <a href="/blog/2015/07/06/customizing-grub2-background/"><em>customizing grub2 background</em> &rarr;</a>
+    </li>
+    </ul>
+  </footer>
 </article>
-<article>
-  <header>
-    <h2><a href='/blog/2015/06/18/reading-programming-pearls/'>reading programming pearls</a></h2>
-    <p class='date-and-tags'>
-<time datetime="2015-06-18" pubdate="true">2015-06-18</time> :: <span class="tags"><a href="/tags/programming-pearls.html">programming pearls</a></span></p>
-  </header>
-
-<p><em>this is my note on reading <strong>programming pearls</strong>.</em></p>
-<footer class="read-more"><a href="/blog/2015/06/18/reading-programming-pearls/">&hellip;more&hellip;</a></footer>
-</article>
-<article>
-  <header>
-    <h2><a href='/blog/2015/06/12/在github-io上部署frog博客引擎/'>在github.io上部署frog博客引擎</a></h2>
-    <p class='date-and-tags'>
-<time datetime="2015-06-12" pubdate="true">2015-06-12</time> :: <span class="tags"><a href="/tags/教程.html">教程</a>, <a href="/tags/racket.html">racket</a>, <a href="/tags/frog.html">frog</a>, <a href="/tags/博客.html">博客</a></span></p>
-  </header>
-
-<p><em>本文是关于如何在github上部署frog博客引擎的教程。</em></p>
-<footer class="read-more"><a href="/blog/2015/06/12/在github-io上部署frog博客引擎/">&hellip;more&hellip;</a></footer>
-</article>
-<article>
-  <header>
-    <h2><a href='/blog/2003/03/09/finding-the-intersection-node-of-two-linked-lists/'>finding the intersection node of two linked lists</a></h2>
-    <p class='date-and-tags'>
-<time datetime="2003-03-09" pubdate="true">2003-03-09</time> :: <span class="tags"><a href="/tags/algorithm.html">algorithm</a>, <a href="/tags/算程.html">算程</a></span></p>
-  </header>
-
-<p><em>finding out the intersection of two linked lists can be solved by this interesting algorithm.</em></p>
-<footer class="read-more"><a href="/blog/2003/03/09/finding-the-intersection-node-of-two-linked-lists/">&hellip;more&hellip;</a></footer>
-</article>
-<footer>
- <ul class="pagination">
-  <li class="disabled"><a href="#">
-    <quote>&larr;</quote></a></li>
-  <li class="active"><a href="/index.html">1</a></li>
-  <li><a href="/index-2.html">2</a></li>
-  <li><a href="/index-2.html">
-    <quote>&rarr;</quote></a></li></ul></footer>
         </div>
       </div>
       <footer>
