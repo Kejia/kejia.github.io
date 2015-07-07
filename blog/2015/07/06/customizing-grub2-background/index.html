@@ -126,68 +126,22 @@
 <!-- more-->
 
 <ol>
- <li>finding out grub2 background resolution</li></ol>
-
-<p>at grub2 booting menu, type <code>c</code> and enter grub2 shell:</p>
-
-<div class="brush: bash">
- <table class="sourcetable">
-  <tbody>
-   <tr>
-    <td class="linenos">
-     <div class="linenodiv">
-      <pre>1</pre></div></td>
-    <td class="code">
-     <div class="source">
-      <pre><span class="nv">$ </span>vbeinfo
-</pre></div>
-</td></tr></tbody></table>
-</div>
-
-<p>the working resolution is the line marked by asterisk.</p>
-
-<ol>
- <li>making your background image</li></ol>
-
-<p>the image used for the grub2 background must have the same resolution as mentioned above. export the image as <em>tga</em> format.</p>
-
-<ol>
- <li>specifying your image as the grub2 background</li></ol>
-
-<p>editing file <em>/etc/default/grub</em> and adding the following line:</p>
-
-<div class="brush: text">
- <table class="sourcetable">
-  <tbody>
-   <tr>
-    <td class="linenos">
-     <div class="linenodiv">
-      <pre>1</pre></div></td>
-    <td class="code">
-     <div class="source">
-      <pre>GRUB_BACKGROUND="/boot/grub/grub2.tga"
-</pre></div>
-</td></tr></tbody></table>
-</div>
-
-<p><em>/boot/grub/grub2.tga</em> is your grub2 background image.</p>
-
-<ol>
- <li>updating grub2 conf</li></ol>
-
-<div class="brush: bash">
- <table class="sourcetable">
-  <tbody>
-   <tr>
-    <td class="linenos">
-     <div class="linenodiv">
-      <pre>1</pre></div></td>
-    <td class="code">
-     <div class="source">
-      <pre><span class="nv">$ </span>update-grub2
-</pre></div>
-</td></tr></tbody></table>
-</div>
+ <li>
+  <p>finding out grub2 background resolution</p>
+  <p>at grub2 booting menu, type <code>c</code> and enter grub2 shell:</p>
+  <pre class="brush: bash"><code>$ vbeinfo</code></pre>
+  <p>the working resolution is the line marked by asterisk.</p></li>
+ <li>
+  <p>making your background image</p>
+  <p>the image used for the grub2 background must have the same resolution as mentioned above. export the image as <em>tga</em> format.</p></li>
+ <li>
+  <p>specifying your image as the grub2 background</p>
+  <p>editing file <em>/etc/default/grub</em> and adding the following line:</p>
+  <pre class="brush: text"><code>GRUB_BACKGROUND="/boot/grub/grub2.tga"</code></pre>
+  <p><em>/boot/grub/grub2.tga</em> is your grub2 background image.</p></li>
+ <li>
+  <p>updating grub2 conf</p>
+  <pre class="brush: bash"><code>$ update-grub2</code></pre></li></ol>
   <footer>
     <script type="text/javascript">
       !function(d,s,id){
