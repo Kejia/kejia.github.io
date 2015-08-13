@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">一位算士的博客 | a computor's blog: Posts tagged 'postgres'</title>
+ <link rel="self" href="http://kejia.github.io/feeds/postgres.atom.xml" />
+ <link href="http://kejia.github.io/tags/postgres.html" />
+ <id>urn:http-kejia-github-io:-tags-postgres-html</id>
+ <updated>2003-08-13T20:11:29Z</updated>
+ <entry>
+  <title type="text">deploying pagila database</title>
+  <link rel="alternate" href="http://kejia.github.io/blog/2003/08/13/deploying-pagila-database/?utm_source=postgres&amp;utm_medium=Atom" />
+  <id>urn:http-kejia-github-io:-blog-2003-08-13-deploying-pagila-database</id>
+  <published>2003-08-13T20:11:29Z</published>
+  <updated>2003-08-13T20:11:29Z</updated>
+  <author>
+   <name>柯嘉 | kejia</name></author>
+  <content type="html">&lt;html&gt;
+&lt;p&gt;&lt;em&gt;&lt;em&gt;pagila&lt;/em&gt; is a popular postgres tutorial database.&lt;/em&gt;&lt;/p&gt;
+&lt;!-- more--&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;make sure superuser &lt;em&gt;postgres&lt;/em&gt; existing, or:&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;pre&gt;&lt;code&gt;# create role postgres superuser password '888';&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;create database &lt;em&gt;pagila&lt;/em&gt;:&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;pre&gt;&lt;code&gt;# create database pagila with owner postgres encoding 'UTF8';&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;create &lt;em&gt;pagila&lt;/em&gt; schema:&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;pre&gt;&lt;code&gt;$ psql -U postgres -f /xi/pagila-schema.sql pagila&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;import data:&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;pre&gt;&lt;code&gt;$ psql -U postgres -f /xi/pagila-data.sql pagila&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/html&gt;</content></entry></feed>

@@ -6,7 +6,7 @@
     <title>一位算士的博客 | a computor's blog (page 2)</title>
     <meta name="description" content="一位算士的博客 | a computor's blog (page 2)">
     <meta name="author"      content="柯嘉 | kejia">
-    <meta name="keywords"    content="教程, command, java, 算程, clojure, bash, spyscope, algorithm, 博客, all, racket, programming pearls, frog, 食谱">
+    <meta name="keywords"    content="教程, command, java, 算程, clojure, bash, pagila, algorithm, 博客, all, racket, postgres, database, spyscope, postgresql, frog, 食谱, programming pearls">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
     <link rel="canonical" href="http://kejia.github.io/index-2.html">
@@ -67,9 +67,17 @@
 
 <li><a href="/tags/command.html">command</a></li>
 
+<li><a href="/tags/database.html">database</a></li>
+
 <li><a href="/tags/frog.html">frog</a></li>
 
 <li><a href="/tags/java.html">java</a></li>
+
+<li><a href="/tags/pagila.html">pagila</a></li>
+
+<li><a href="/tags/postgres.html">postgres</a></li>
+
+<li><a href="/tags/postgresql.html">postgresql</a></li>
 
 <li><a href="/tags/programming-pearls.html">programming pearls</a></li>
 
@@ -106,6 +114,18 @@
 
 
           <article>
+  <header>
+    <h2><a href='/blog/2002/03/26/tar-a-file-without-ancestor-directories/'>tar a file without ancestor directories</a></h2>
+    <p class='date-and-tags'>
+<time datetime="2002-03-26" pubdate="true">2002-03-26</time> :: <span class="tags"><a href="/tags/bash.html">bash</a>, <a href="/tags/command.html">command</a></span></p>
+  </header>
+
+<p><code>tar</code> command may generate a file with unnecessary ancestor directories. use <code>C</code> option to remain the file only:</p>
+
+<div class="brush: bash">
+ <pre><code>$ tar -czf xi.tar.gz -C /one/two/three/xi .</code></pre></div>
+</article>
+<article>
   <header>
     <h2><a href='/blog/2002/01/30/java字符串格式化/'>java字符串格式化</a></h2>
     <p class='date-and-tags'>

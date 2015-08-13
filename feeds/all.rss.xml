@@ -245,6 +245,38 @@ $ git add .
 $ git commit -m 'post my blog'
 $ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/html&gt;</description></item>
   <item>
+   <title>deploying pagila database</title>
+   <link>http://kejia.github.io/blog/2003/08/13/deploying-pagila-database/?utm_source=all&amp;utm_medium=RSS</link>
+   <guid>urn:http-kejia-github-io:-blog-2003-08-13-deploying-pagila-database</guid>
+   <pubDate>Wed, 13 Aug 2003 20:11:29 UT</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;&lt;em&gt;&lt;em&gt;pagila&lt;/em&gt; is a popular postgres tutorial database.&lt;/em&gt;&lt;/p&gt;
+&lt;!-- more--&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;make sure superuser &lt;em&gt;postgres&lt;/em&gt; existing, or:&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;pre&gt;&lt;code&gt;# create role postgres superuser password '888';&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;create database &lt;em&gt;pagila&lt;/em&gt;:&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;pre&gt;&lt;code&gt;# create database pagila with owner postgres encoding 'UTF8';&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;create &lt;em&gt;pagila&lt;/em&gt; schema:&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;pre&gt;&lt;code&gt;$ psql -U postgres -f /xi/pagila-schema.sql pagila&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;import data:&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;pre&gt;&lt;code&gt;$ psql -U postgres -f /xi/pagila-data.sql pagila&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/html&gt;</description></item>
+  <item>
    <title>finding the intersection node of two linked lists</title>
    <link>http://kejia.github.io/blog/2003/03/09/finding-the-intersection-node-of-two-linked-lists/?utm_source=all&amp;utm_medium=RSS</link>
    <guid>urn:http-kejia-github-io:-blog-2003-03-09-finding-the-intersection-node-of-two-linked-lists</guid>
@@ -273,14 +305,4 @@ $ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&g
    <guid>urn:http-kejia-github-io:-blog-2002-06-23-sorting-a-binary-search-tree</guid>
    <pubDate>Sun, 23 Jun 2002 22:10:55 UT</pubDate>
    <description>&lt;html&gt;
-&lt;p&gt;in-order traversal can be used to sort a binary search tree.&lt;/p&gt;&lt;/html&gt;</description></item>
-  <item>
-   <title>tar a file without ancestor directories</title>
-   <link>http://kejia.github.io/blog/2002/03/26/tar-a-file-without-ancestor-directories/?utm_source=all&amp;utm_medium=RSS</link>
-   <guid>urn:http-kejia-github-io:-blog-2002-03-26-tar-a-file-without-ancestor-directories</guid>
-   <pubDate>Tue, 26 Mar 2002 21:51:15 UT</pubDate>
-   <description>&lt;html&gt;
-&lt;p&gt;&lt;code&gt;tar&lt;/code&gt; command may generate a file with unnecessary ancestor directories. use &lt;code&gt;C&lt;/code&gt; option to remain the file only:&lt;/p&gt;
-
-&lt;div class="brush: bash"&gt;
- &lt;pre&gt;&lt;code&gt;$ tar -czf xi.tar.gz -C /one/two/three/xi .&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/html&gt;</description></item></channel></rss>
+&lt;p&gt;in-order traversal can be used to sort a binary search tree.&lt;/p&gt;&lt;/html&gt;</description></item></channel></rss>

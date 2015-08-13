@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>一位算士的博客 | a computor's blog: Posts tagged 'postgres'</title>
+  <description>一位算士的博客 | a computor's blog: Posts tagged 'postgres'</description>
+  <link>http://kejia.github.io/tags/postgres.html</link>
+  <lastBuildDate>Wed, 13 Aug 2003 20:11:29 UT</lastBuildDate>
+  <pubDate>Wed, 13 Aug 2003 20:11:29 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>deploying pagila database</title>
+   <link>http://kejia.github.io/blog/2003/08/13/deploying-pagila-database/?utm_source=postgres&amp;utm_medium=RSS</link>
+   <guid>urn:http-kejia-github-io:-blog-2003-08-13-deploying-pagila-database</guid>
+   <pubDate>Wed, 13 Aug 2003 20:11:29 UT</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;&lt;em&gt;&lt;em&gt;pagila&lt;/em&gt; is a popular postgres tutorial database.&lt;/em&gt;&lt;/p&gt;
+&lt;!-- more--&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;make sure superuser &lt;em&gt;postgres&lt;/em&gt; existing, or:&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;pre&gt;&lt;code&gt;# create role postgres superuser password '888';&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;create database &lt;em&gt;pagila&lt;/em&gt;:&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;pre&gt;&lt;code&gt;# create database pagila with owner postgres encoding 'UTF8';&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;create &lt;em&gt;pagila&lt;/em&gt; schema:&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;pre&gt;&lt;code&gt;$ psql -U postgres -f /xi/pagila-schema.sql pagila&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;import data:&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class="brush: bash"&gt;
+ &lt;pre&gt;&lt;code&gt;$ psql -U postgres -f /xi/pagila-data.sql pagila&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/html&gt;</description></item></channel></rss>
