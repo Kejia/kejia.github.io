@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>一位算士的博客 | a computor's blog: Posts tagged 'gdm'</title>
+  <description>一位算士的博客 | a computor's blog: Posts tagged 'gdm'</description>
+  <link>http://kejia.github.io/tags/gdm.html</link>
+  <lastBuildDate>Tue, 07 Jul 2015 03:08:17 UT</lastBuildDate>
+  <pubDate>Tue, 07 Jul 2015 03:08:17 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>customizing the background of gnome3 login screen</title>
+   <link>http://kejia.github.io/blog/2015/07/06/customizing-the-background-of-gnome3-login-screen/?utm_source=gdm&amp;utm_medium=RSS</link>
+   <guid>urn:http-kejia-github-io:-blog-2015-07-06-customizing-the-background-of-gnome3-login-screen</guid>
+   <pubDate>Tue, 07 Jul 2015 03:08:17 UT</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;&lt;em&gt;gnome conf tools on debian jessie, such as dconf-editor, are not robust at present, and it&amp;rsquo;s not straightforward to customize the background of gnome3 login screen. modifying the default background of gnome3 login screen on debian jessie can be done by editing file &lt;em&gt;/usr/share/gnome-shell/theme/gnome-shell.css&lt;/em&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;!-- more--&gt;
+
+&lt;p&gt;open file &lt;em&gt;/usr/share/gnome-shell/theme/gnome-shell.css&lt;/em&gt; and edit the following block:&lt;/p&gt;
+
+&lt;div class="brush: css"&gt;
+ &lt;pre&gt;&lt;code&gt;#lockDialogGroup {
+    background: #2e3436 url(gdm.png);
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;here, &lt;em&gt;gdm.png&lt;/em&gt; is the image for gnome3 login screen, and it should be placed in the directory &lt;em&gt;/usr/share/gnome-shell/theme&lt;/em&gt;, i.e. the directory containing &lt;em&gt;gnome-shell.css&lt;/em&gt;.&lt;/p&gt;&lt;/html&gt;</description></item></channel></rss>

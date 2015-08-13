@@ -3,15 +3,15 @@
   <head>
 
     <meta charset="utf-8">
-    <title>在github.io上部署frog博客引擎</title>
-    <meta name="description" content="frog是基于racket的博客引擎，本文介绍了如何在github.io上部署该博客引擎。      制作用于访问github的ssh密钥    参考：配置github密钥。             查看.ssh已有密钥      `$ ls -al ~/.ssh`     若使用已有密钥，则忽略下一步。       制作新ssh密钥      `$ ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; Enter file in which to s...">
+    <title>customizing grub2 background</title>
+    <meta name="description" content="_customizing the background of grub2 on debian jessie is not documented much, and i have done as follows._...">
     <meta name="author"      content="柯嘉 | kejia">
-    <meta name="keywords"    content="教程, racket, frog, 博客">
+    <meta name="keywords"    content="debian, jessie, grub2">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
-    <link rel="canonical" href="http://kejia.github.io/blog/2015/06/15/在github-io上部署frog博客引擎/">
-
-
+    <link rel="canonical" href="http://kejia.github.io/blog/2015/07/06/customizing-grub2-background/">
+    <link rel="next" href="/blog/2015/07/03/spyscope实现原理/">
+    <link rel="prev" href="/blog/2015/07/06/customizing-the-background-of-gnome3-login-screen/">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/pygments.css">
@@ -59,13 +59,49 @@
               <ul class="dropdown-menu">
                 <li><a href="/index.html">所有文章 | all posts</a></li>
 
+<li><a href="/tags/algorithm.html">algorithm</a></li>
+
+<li><a href="/tags/bash.html">bash</a></li>
+
+<li><a href="/tags/clojure.html">clojure</a></li>
+
+<li><a href="/tags/command.html">command</a></li>
+
+<li><a href="/tags/database.html">database</a></li>
+
+<li><a href="/tags/debian.html">debian</a></li>
+
 <li><a href="/tags/frog.html">frog</a></li>
 
+<li><a href="/tags/gdm.html">gdm</a></li>
+
+<li><a href="/tags/gnome.html">gnome</a></li>
+
+<li><a href="/tags/grub2.html">grub2</a></li>
+
+<li><a href="/tags/java.html">java</a></li>
+
+<li><a href="/tags/jessie.html">jessie</a></li>
+
+<li><a href="/tags/pagila.html">pagila</a></li>
+
+<li><a href="/tags/postgres.html">postgres</a></li>
+
+<li><a href="/tags/postgresql.html">postgresql</a></li>
+
+<li><a href="/tags/programming-pearls.html">programming pearls</a></li>
+
 <li><a href="/tags/racket.html">racket</a></li>
+
+<li><a href="/tags/spyscope.html">spyscope</a></li>
 
 <li><a href="/tags/博客.html">博客</a></li>
 
 <li><a href="/tags/教程.html">教程</a></li>
+
+<li><a href="/tags/算程.html">算程</a></li>
+
+<li><a href="/tags/食谱.html">食谱</a></li>
               </ul>
             </li>
             <li>
@@ -89,84 +125,31 @@
 
           <article>
   <header>
-    <h1>在github.io上部署frog博客引擎</h1>
+    <h1>customizing grub2 background</h1>
     <p class='date-and-tags'>
-<time datetime="2015-06-15" pubdate="true">2015-06-15</time> :: <span class="tags"><a href="/tags/教程.html">教程</a>, <a href="/tags/racket.html">racket</a>, <a href="/tags/frog.html">frog</a>, <a href="/tags/博客.html">博客</a></span></p>
+<time datetime="2015-07-06" pubdate="true">2015-07-06</time> :: <span class="tags"><a href="/tags/debian.html">debian</a>, <a href="/tags/jessie.html">jessie</a>, <a href="/tags/grub2.html">grub2</a></span></p>
   </header>
 
-<p><a href="http://github.com/greghendershott/frog">frog</a>是基于<a href="http://racket-lang.org/">racket</a>的博客引擎，本文介绍了如何在<a href="http://help.github.com/articles/user-organization-and-project-pages/">github.io</a>上部署该博客引擎。</p>
+<p><em>customizing the background of grub2 on debian jessie is not documented much, and i have done as follows.</em></p>
+<!-- more-->
 
 <ol>
  <li>
-  <p>制作用于访问github的ssh密钥</p>
-  <p>参考：<a href="http://help.github.com/articles/generating-ssh-keys/">配置github密钥</a>。</p>
-  <ol>
-   <li>
-    <p>查看.ssh已有密钥</p>
-    <pre class="brush: bash"><code>$ ls -al ~/.ssh</code></pre>
-    <p>若使用已有密钥，则忽略下一步。</p></li>
-   <li>
-    <p>制作新ssh密钥</p>
-    <pre class="brush: bash"><code>$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-Enter file in which to save the key (/Users/you/.ssh/id_rsa): [press enter]
-Enter passphrase (empty for no passphrase): [type a passphrase]
-# Enter same passphrase again: [type passphrase again]</code></pre></li>
-   <li>
-    <p>检测ssh-agent是否运行</p>
-    <pre class="brush: bash"><code>$ eval "$(ssh-agent -s)"
-# Agent pid 59566</code></pre></li>
-   <li>
-    <p>公钥交由ssh-agent</p>
-    <pre class="brush: bash"><code>$ ssh-add ~/.ssh/id_rsa</code></pre></li>
-   <li>
-    <p>复制公钥到剪贴板</p>
-    <pre class="brush: bash"><code>$ xclip -sel clip &lt; ~/.ssh/id_rsa.pub</code></pre></li>
-   <li>
-    <p>公钥交由github</p>
-    <p>settings &gt; add ssh key</p></li>
-   <li>
-    <p>测试</p>
-    <pre class="brush: bash"><code>$ ssh -T git@github.com</code></pre></li></ol></li>
+  <p>finding out grub2 background resolution</p>
+  <p>at grub2 booting menu, type <code>c</code> and enter grub2 shell:</p>
+  <pre class="brush: bash"><code>$ vbeinfo</code></pre>
+  <p>the working resolution is the line marked by asterisk.</p></li>
  <li>
-  <p>设置github用户页</p>
-  <p>参考：<a href="http://www.thinkful.com/learn/a-guide-to-using-github-pages/">github主页指南</a>。</p>
-  <p>要使用username.github.io的域名，则需要创建github用户页作业，作业仓库名必须是：username.github.io。</p></li>
+  <p>making your background image</p>
+  <p>the image used for the grub2 background must have the same resolution as mentioned above. export the image as <em>tga</em> format.</p></li>
  <li>
-  <p>创建frog作业</p>
-  <p>参考：<a href="http://github.com/greghendershott/frog">frog指南</a>。</p>
-  <ol>
-   <li>
-    <p>克隆github用户页作业</p>
-    <p><code>bash
- $ mkdir frog
- $ cd frog
- $ git clone https://github.com/username/username.github.io.git</code></p></li>
-   <li>
-    <p>安装frog</p>
-    <pre class="brush: bash"><code>$ raco pkg install frog
-$ raco pkg update --update-deps frog
-$ aptitude install python-pygments
-$ aptitude install python3-pygments</code></pre></li>
-   <li>
-    <p>建立作业</p>
-    <pre class="brush: bash"><code>$ cd username.github.io
-$ raco frog --init</code></pre></li></ol></li>
+  <p>specifying your image as the grub2 background</p>
+  <p>editing file <em>/etc/default/grub</em> and adding the following line:</p>
+  <pre class="brush: text"><code>GRUB_BACKGROUND="/boot/grub/grub2.tga"</code></pre>
+  <p><em>/boot/grub/grub2.tga</em> is your grub2 background image.</p></li>
  <li>
-  <p>发布文章</p>
-  <p>参考：<a href="http://github.com/greghendershott/frog">frog指南</a>。</p>
-  <ol>
-   <li>
-    <p>创建文章</p>
-    <pre class="brush: bash"><code>$ raco frog -n "My Post Title"</code></pre></li>
-   <li>
-    <p>编译并预览</p>
-    <pre class="brush: bash"><code>$ raco frog -bp</code></pre></li>
-   <li>
-    <p>部署至github</p>
-    <pre class="brush: bash"><code>$ raco frog -b
-$ git add .
-$ git commit -m 'post my blog'
-$ git push origin master</code></pre></li></ol></li></ol>
+  <p>updating grub2 conf</p>
+  <pre class="brush: bash"><code>$ update-grub2</code></pre></li></ol>
   <footer>
     <script type="text/javascript">
       !function(d,s,id){
@@ -181,11 +164,11 @@ $ git push origin master</code></pre></li></ol></li></ol>
     </script>
     <a href="https://twitter.com/share"
        class="twitter-share-button"
-       data-url="http://kejia.github.io/blog/2015/06/15/在github-io上部署frog博客引擎/"
+       data-url="http://kejia.github.io/blog/2015/07/06/customizing-grub2-background/"
        data-dnt="true">
       "Tweet"</a>
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-    <g:plusone size="medium" href="http://kejia.github.io/blog/2015/06/15/在github-io上部署frog博客引擎/"></g:plusone>
+    <g:plusone size="medium" href="http://kejia.github.io/blog/2015/07/06/customizing-grub2-background/"></g:plusone>
     <script type="text/javascript">
       var disqus_shortname = 'shortname';
       (function() {
@@ -198,8 +181,12 @@ $ git push origin master</code></pre></li></ol></li></ol>
     </script>
     <div id="disqus_thread"></div>
     <ul class="pager">
-
-
+    <li class="previous">
+      <a href="/blog/2015/07/06/customizing-the-background-of-gnome3-login-screen/">&larr; <em>customizing the background of gnome3 login screen</em></a>
+    </li>
+    <li class="next">
+      <a href="/blog/2015/07/03/spyscope实现原理/"><em>spyscope实现原理</em> &rarr;</a>
+    </li>
     </ul>
   </footer>
 </article>

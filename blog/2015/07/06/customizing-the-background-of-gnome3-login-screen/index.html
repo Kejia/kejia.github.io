@@ -3,15 +3,15 @@
   <head>
 
     <meta charset="utf-8">
-    <title>java逻辑运算赋值快捷方式</title>
-    <meta name="description" content="_java中不存在`&&=`，取而代之的是`&=`。_...">
+    <title>customizing the background of gnome3 login screen</title>
+    <meta name="description" content="_gnome conf tools on debian jessie, such as dconf-editor, are not robust at present, and it's not straightforward to customize the background of gnome3 login screen. modifying the default background of gnome3 login screen on debian jessie can be done by e...">
     <meta name="author"      content="柯嘉 | kejia">
-    <meta name="keywords"    content="java">
+    <meta name="keywords"    content="debian, jessie, gnome, gdm">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
-    <link rel="canonical" href="http://kejia.github.io/blog/2001/02/08/java逻辑运算赋值快捷方式/">
+    <link rel="canonical" href="http://kejia.github.io/blog/2015/07/06/customizing-the-background-of-gnome3-login-screen/">
+    <link rel="next" href="/blog/2015/07/06/customizing-grub2-background/">
 
-    <link rel="prev" href="/blog/2002/01/30/java字符串格式化/">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/pygments.css">
@@ -125,27 +125,25 @@
 
           <article>
   <header>
-    <h1>java逻辑运算赋值快捷方式</h1>
+    <h1>customizing the background of gnome3 login screen</h1>
     <p class='date-and-tags'>
-<time datetime="2001-02-08" pubdate="true">2001-02-08</time> :: <span class="tags"><a href="/tags/java.html">java</a></span></p>
+<time datetime="2015-07-06" pubdate="true">2015-07-06</time> :: <span class="tags"><a href="/tags/debian.html">debian</a>, <a href="/tags/jessie.html">jessie</a>, <a href="/tags/gnome.html">gnome</a>, <a href="/tags/gdm.html">gdm</a></span></p>
   </header>
 
-<p><em>java中不存在<code>&amp;&amp;=</code>，取而代之的是<code>&amp;=</code>。</em></p>
+<p><em>gnome conf tools on debian jessie, such as dconf-editor, are not robust at present, and it&rsquo;s not straightforward to customize the background of gnome3 login screen. modifying the default background of gnome3 login screen on debian jessie can be done by editing file <em>/usr/share/gnome-shell/theme/gnome-shell.css</em>.</em></p>
 <!-- more-->
 
-<div class="brush: java">
- <pre><code>boolean f = true, b = true;
-  ⋮
-f = f &amp;&amp; b;</code></pre></div>
+<p>open file <em>/usr/share/gnome-shell/theme/gnome-shell.css</em> and edit the following block:</p>
 
-<p>可以写成：</p>
+<div class="brush: css">
+ <pre><code>#lockDialogGroup {
+    background: #2e3436 url(gdm.png);
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}</code></pre></div>
 
-<div class="brush: java">
- <pre><code>boolean f = true, b = true;
-  ⋮
-f &amp;= b;</code></pre></div>
-
-<p>但后者诸位操作，不会进行短路。</p>
+<p>here, <em>gdm.png</em> is the image for gnome3 login screen, and it should be placed in the directory <em>/usr/share/gnome-shell/theme</em>, i.e. the directory containing <em>gnome-shell.css</em>.</p>
   <footer>
     <script type="text/javascript">
       !function(d,s,id){
@@ -160,11 +158,11 @@ f &amp;= b;</code></pre></div>
     </script>
     <a href="https://twitter.com/share"
        class="twitter-share-button"
-       data-url="http://kejia.github.io/blog/2001/02/08/java逻辑运算赋值快捷方式/"
+       data-url="http://kejia.github.io/blog/2015/07/06/customizing-the-background-of-gnome3-login-screen/"
        data-dnt="true">
       "Tweet"</a>
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-    <g:plusone size="medium" href="http://kejia.github.io/blog/2001/02/08/java逻辑运算赋值快捷方式/"></g:plusone>
+    <g:plusone size="medium" href="http://kejia.github.io/blog/2015/07/06/customizing-the-background-of-gnome3-login-screen/"></g:plusone>
     <script type="text/javascript">
       var disqus_shortname = 'shortname';
       (function() {
@@ -177,10 +175,10 @@ f &amp;= b;</code></pre></div>
     </script>
     <div id="disqus_thread"></div>
     <ul class="pager">
-    <li class="previous">
-      <a href="/blog/2002/01/30/java字符串格式化/">&larr; <em>java字符串格式化</em></a>
-    </li>
 
+    <li class="next">
+      <a href="/blog/2015/07/06/customizing-grub2-background/"><em>customizing grub2 background</em> &rarr;</a>
+    </li>
     </ul>
   </footer>
 </article>
