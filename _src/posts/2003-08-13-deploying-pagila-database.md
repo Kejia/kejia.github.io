@@ -6,25 +6,25 @@ _*pagila* is a popular postgres tutorial database._
 
 <!-- more -->
 
-0. make sure superuser _postgres_ existing, or:
+* make sure superuser _postgres_ existing, or:
 
 ```bash
 # create role postgres superuser password '888';
 ```
 
-1. create database _pagila_:
+* create database _pagila_:
 
 ```bash
 # create database pagila with owner postgres encoding 'UTF8';
 ```
 
-2. create _pagila_ schema:
+* create _pagila_ schema:
 
 ```bash
 $ psql -U postgres -f /xi/pagila-schema.sql pagila
 ```
 
-3. import data:
+* import data:
 
 ```bash
 $ psql -U postgres -f /xi/pagila-data.sql pagila
