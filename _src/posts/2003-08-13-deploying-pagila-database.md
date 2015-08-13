@@ -12,19 +12,19 @@ _*pagila* is a popular postgres tutorial database._
 # create role postgres superuser password '888';
 ```
 
-0. create database _pagila_:
+1. create database _pagila_:
 
 ```bash
 # create database pagila with owner postgres encoding 'UTF8';
 ```
 
-0. create _pagila_ schema:
+2. create _pagila_ schema:
 
 ```bash
 $ psql -U postgres -f /xi/pagila-schema.sql pagila
 ```
 
-0. import data:
+3. import data:
 
 ```bash
 $ psql -U postgres -f /xi/pagila-data.sql pagila
