@@ -133,26 +133,26 @@
 <p><em><em>pagila</em> is a popular postgres tutorial database.</em></p>
 <!-- more-->
 
-<ol>
- <li>make sure superuser <em>postgres</em> existing, or:</li></ol>
+<ul>
+ <li>make sure superuser <em>postgres</em> existing, or:</li></ul>
 
 <div class="brush: bash">
  <pre><code># create role postgres superuser password '888';</code></pre></div>
 
-<ol>
- <li>create database <em>pagila</em>:</li></ol>
+<ul>
+ <li>create database <em>pagila</em>:</li></ul>
 
 <div class="brush: bash">
  <pre><code># create database pagila with owner postgres encoding 'UTF8';</code></pre></div>
 
-<ol>
- <li>create <em>pagila</em> schema:</li></ol>
+<ul>
+ <li>create <em>pagila</em> schema:</li></ul>
 
 <div class="brush: bash">
  <pre><code>$ psql -U postgres -f /xi/pagila-schema.sql pagila</code></pre></div>
 
-<ol>
- <li>import data:</li></ol>
+<ul>
+ <li>import data:</li></ul>
 
 <div class="brush: bash">
  <pre><code>$ psql -U postgres -f /xi/pagila-data.sql pagila</code></pre></div>
