@@ -3,6 +3,7 @@ http://kejia.github.io/blog/2001/02/08/java逻辑运算赋值快捷方式/
 http://kejia.github.io/blog/2003/03/09/finding-the-intersection-node-of-two-linked-lists/
 http://kejia.github.io/blog/2015/06/19/take-while-of-clojure/
 http://kejia.github.io/blog/2003/08/13/deploying-pagila-database/
+http://kejia.github.io/blog/2015/08/19/outputting-to-edn-in-clojure/
 http://kejia.github.io/blog/2002/03/26/tar-a-file-without-ancestor-directories/
 http://kejia.github.io/blog/2015/06/18/reading-programming-pearls/
 http://kejia.github.io/blog/2015/06/18/醪糟蛋花汤/
