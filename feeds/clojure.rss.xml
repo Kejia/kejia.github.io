@@ -4,17 +4,24 @@
   <title>一位算士的博客 | a computor's blog: Posts tagged 'clojure'</title>
   <description>一位算士的博客 | a computor's blog: Posts tagged 'clojure'</description>
   <link>http://kejia.github.io/tags/clojure.html</link>
-  <lastBuildDate>Wed, 19 Aug 2015 15:08:37 UT</lastBuildDate>
-  <pubDate>Wed, 19 Aug 2015 15:08:37 UT</pubDate>
+  <lastBuildDate>Wed, 19 Aug 2015 15:19:51 UT</lastBuildDate>
+  <pubDate>Wed, 19 Aug 2015 15:19:51 UT</pubDate>
   <ttl>1800</ttl>
   <item>
-   <title>outputting to edn in clojure</title>
-   <link>http://kejia.github.io/blog/2015/08/19/outputting-to-edn-in-clojure/?utm_source=clojure&amp;utm_medium=RSS</link>
-   <guid>urn:http-kejia-github-io:-blog-2015-08-19-outputting-to-edn-in-clojure</guid>
-   <pubDate>Wed, 19 Aug 2015 15:08:37 UT</pubDate>
+   <title>edn io in clojure</title>
+   <link>http://kejia.github.io/blog/2015/08/19/edn-io-in-clojure/?utm_source=clojure&amp;utm_medium=RSS</link>
+   <guid>urn:http-kejia-github-io:-blog-2015-08-19-edn-io-in-clojure</guid>
+   <pubDate>Wed, 19 Aug 2015 15:19:51 UT</pubDate>
    <description>&lt;html&gt;
+&lt;p&gt;output:&lt;/p&gt;
+
 &lt;div class="brush: clojure"&gt;
- &lt;pre&gt;&lt;code&gt;(spit "/xi/xii.edn" (with-out-str (clojure.pprint/pprint x)))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/html&gt;</description></item>
+ &lt;pre&gt;&lt;code&gt;(spit "/xi/xii.edn" (with-out-str (clojure.pprint/pprint x)))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;input:&lt;/p&gt;
+
+&lt;div class="brush: clojure"&gt;
+ &lt;pre&gt;&lt;code&gt;(read-string (slurp "/xi/xii.edn"))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/html&gt;</description></item>
   <item>
    <title>spyscope实现原理</title>
    <link>http://kejia.github.io/blog/2015/07/03/spyscope实现原理/?utm_source=clojure&amp;utm_medium=RSS</link>

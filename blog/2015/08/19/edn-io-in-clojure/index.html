@@ -3,13 +3,13 @@
   <head>
 
     <meta charset="utf-8">
-    <title>outputting to edn in clojure</title>
-    <meta name="description" content="`(spit &quot;/xi/xii.edn&quot; (with-out-str (clojure.pprint/pprint x)))`...">
+    <title>edn io in clojure</title>
+    <meta name="description" content="output:   `(spit &quot;/xi/xii.edn&quot; (with-out-str (clojure.pprint/pprint x)))`  input:   `(read-string (slurp &quot;/xi/xii.edn&quot;))`...">
     <meta name="author"      content="柯嘉 | kejia">
     <meta name="keywords"    content="clojure, edn">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
-    <link rel="canonical" href="http://kejia.github.io/blog/2015/08/19/outputting-to-edn-in-clojure/">
+    <link rel="canonical" href="http://kejia.github.io/blog/2015/08/19/edn-io-in-clojure/">
     <link rel="next" href="/blog/2015/07/06/customizing-the-background-of-gnome3-login-screen/">
 
     <!-- CSS -->
@@ -127,13 +127,20 @@
 
           <article>
   <header>
-    <h1>outputting to edn in clojure</h1>
+    <h1>edn io in clojure</h1>
     <p class='date-and-tags'>
 <time datetime="2015-08-19" pubdate="true">2015-08-19</time> :: <span class="tags"><a href="/tags/clojure.html">clojure</a>, <a href="/tags/edn.html">edn</a></span></p>
   </header>
 
+<p>output:</p>
+
 <div class="brush: clojure">
  <pre><code>(spit "/xi/xii.edn" (with-out-str (clojure.pprint/pprint x)))</code></pre></div>
+
+<p>input:</p>
+
+<div class="brush: clojure">
+ <pre><code>(read-string (slurp "/xi/xii.edn"))</code></pre></div>
   <footer>
     <script type="text/javascript">
       !function(d,s,id){
@@ -148,11 +155,11 @@
     </script>
     <a href="https://twitter.com/share"
        class="twitter-share-button"
-       data-url="http://kejia.github.io/blog/2015/08/19/outputting-to-edn-in-clojure/"
+       data-url="http://kejia.github.io/blog/2015/08/19/edn-io-in-clojure/"
        data-dnt="true">
       "Tweet"</a>
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-    <g:plusone size="medium" href="http://kejia.github.io/blog/2015/08/19/outputting-to-edn-in-clojure/"></g:plusone>
+    <g:plusone size="medium" href="http://kejia.github.io/blog/2015/08/19/edn-io-in-clojure/"></g:plusone>
     <script type="text/javascript">
       var disqus_shortname = 'shortname';
       (function() {

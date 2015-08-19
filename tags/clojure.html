@@ -127,13 +127,20 @@
 
           <article>
   <header>
-    <h2><a href='/blog/2015/08/19/outputting-to-edn-in-clojure/'>outputting to edn in clojure</a></h2>
+    <h2><a href='/blog/2015/08/19/edn-io-in-clojure/'>edn io in clojure</a></h2>
     <p class='date-and-tags'>
 <time datetime="2015-08-19" pubdate="true">2015-08-19</time> :: <span class="tags"><a href="/tags/clojure.html">clojure</a>, <a href="/tags/edn.html">edn</a></span></p>
   </header>
 
+<p>output:</p>
+
 <div class="brush: clojure">
  <pre><code>(spit "/xi/xii.edn" (with-out-str (clojure.pprint/pprint x)))</code></pre></div>
+
+<p>input:</p>
+
+<div class="brush: clojure">
+ <pre><code>(read-string (slurp "/xi/xii.edn"))</code></pre></div>
 </article>
 <article>
   <header>

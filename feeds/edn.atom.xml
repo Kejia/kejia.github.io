@@ -4,15 +4,22 @@
  <link rel="self" href="http://kejia.github.io/feeds/edn.atom.xml" />
  <link href="http://kejia.github.io/tags/edn.html" />
  <id>urn:http-kejia-github-io:-tags-edn-html</id>
- <updated>2015-08-19T15:08:37Z</updated>
+ <updated>2015-08-19T15:19:51Z</updated>
  <entry>
-  <title type="text">outputting to edn in clojure</title>
-  <link rel="alternate" href="http://kejia.github.io/blog/2015/08/19/outputting-to-edn-in-clojure/?utm_source=edn&amp;utm_medium=Atom" />
-  <id>urn:http-kejia-github-io:-blog-2015-08-19-outputting-to-edn-in-clojure</id>
-  <published>2015-08-19T15:08:37Z</published>
-  <updated>2015-08-19T15:08:37Z</updated>
+  <title type="text">edn io in clojure</title>
+  <link rel="alternate" href="http://kejia.github.io/blog/2015/08/19/edn-io-in-clojure/?utm_source=edn&amp;utm_medium=Atom" />
+  <id>urn:http-kejia-github-io:-blog-2015-08-19-edn-io-in-clojure</id>
+  <published>2015-08-19T15:19:51Z</published>
+  <updated>2015-08-19T15:19:51Z</updated>
   <author>
    <name>柯嘉 | kejia</name></author>
   <content type="html">&lt;html&gt;
+&lt;p&gt;output:&lt;/p&gt;
+
 &lt;div class="brush: clojure"&gt;
- &lt;pre&gt;&lt;code&gt;(spit "/xi/xii.edn" (with-out-str (clojure.pprint/pprint x)))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/html&gt;</content></entry></feed>
+ &lt;pre&gt;&lt;code&gt;(spit "/xi/xii.edn" (with-out-str (clojure.pprint/pprint x)))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;input:&lt;/p&gt;
+
+&lt;div class="brush: clojure"&gt;
+ &lt;pre&gt;&lt;code&gt;(read-string (slurp "/xi/xii.edn"))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/html&gt;</content></entry></feed>
